@@ -7,6 +7,7 @@ Data should be parsed as: ["TEAM #","Team Name",INT:Totes stacked reliably,INT:O
 BOOL:Can they place a litter in the bin?,BOOL: Do they use the chute?,INT:Match #]
 ### EXAMPLE ###
 ["5431","Titan Robotics",6,0,False,True,30]
+["TeamNum","TeamName",Totes,BinOnTotes,Litter,Chute,MatchNum]
 """
 ### CUSTOMIZATION BEGIN ###
 
@@ -23,12 +24,73 @@ MinimumScoreBool = False
 
 # Testing stuff
 Titan_Array = ["5431","Titan Robotics",6,0,False,True,30]
+GlobalArrayName = [" "]
+NewArray = [0,0,0,0,0,0,0]
+NewArray2 = []
 
 ### CUSTOMIZATION END ###
 
 ### LIST MANAGMENT BEGIN ###
 
-def PopArray(Scouted_Array,Data):
+
+
+
+def ParseStringInput(TeamString,Scouted_Array,DataType):
+    # Clean the string input, assign it to a variable, insert it into the list. NOT ABSOLUTE
+    ### THIS NEEDS TO BE PUT IN THE REAL ORDER!!!! IT WILL BREAK IF ITS NOT!
+    if isinstance(TeamString,str):
+        Scouted_Array[DataType] = TeamString
+    else:
+        try:
+            TeamString = str(TeamString)
+            Scouted_Array[DataType] = TeamString
+        except Exception:
+            print "helllo!"
+        
+"""
+["TeamNum","TeamName",Totes,BinOnTotes,Litter,Chute,MatchNum]
+"""
+
+
+def ParseDataType(DataType):
+    # This snippet parses the datatype that you want in order to set the index 
+    # at a position
+    if DataType == "TeamNum":
+        DataType = 2
+    elif DataType == "TeamName":
+        DataType = 2
+    elif DataType == "Totes":
+        DataType = 2
+    elif DataType == "BinOnTotes":
+        DataType = 3
+    elif DataType == "Litter":
+        DataType = 4
+    elif DataType == "Chute":
+        DataType = 5
+    elif DataType == "MatchNum":
+        DataType = 6
+    else:
+        print "DataType not recognized! Complain to Oliver"
+    return DataType
+
+def ParseIntegerInput(TeamInt,Scouted_Array,DataType):
+    # TeamInt is any number that needs to parsed and put into the list.
+    # This snippet actually inserts the TeamInt at the DataType index pos.
+    # Datatype is, in reality, the index position of list. Should be passed to
+    # this function via the ParseDataType function
+    if isinstance(TeamInt,int):
+        Scouted_Array[DataType] = TeamInt
+    else:
+        try:
+            TeamInt = int(TeamInt)
+            Scouted_Array[DataType] = TeamInt
+        except Exception:
+            print "helllo!"
+    
+
+
+    
+def PeekArray(Scouted_Array,Data):
     TeamNum = Scouted_Array[0]
     TeamName = Scouted_Array[1]
     TeamTotesStacked = Scouted_Array[2]
@@ -53,16 +115,10 @@ def PopArray(Scouted_Array,Data):
         return TeamChute
     elif Data == "TeamMatchNum":
         return TeamMatchNum
+    else:
+        # TODO : Error raising and handeling
+        print "Wrong input!"
 
-
-
-def ParseNum(TeamNum):
-    # Clean the totes input, assign it to a variable, insert it into the list
-    try:
-        # TODO: write code...
-        x = int(TeamNum)
-    except Exception, e:
-        raise SystemExit
 
 ### LIST MANAGMENT END ###
 
@@ -133,7 +189,7 @@ def CheckMinimumScore(MinimumScoreBool,MinimumScore,ScoutedScore):
 ### FILE LOADING STUFF BEGIN ###
 
 def GetNameAndTeamNum(Scouted_Array):
-    return Scouted_Array[0] + " : " + Scouted_Array[1]
+    return Scouted_Array[0] + " : " + Scouted_Array[1] + ".p"
     
 ### FILE LOADING STUFF END ###
 

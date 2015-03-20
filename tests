@@ -1,14 +1,15 @@
 import main
+import listmanagment
 
-def Create0InitArray():
+def Create0InitalizedArray():
     EmptyArray = []
     for n in range(0,7):
         EmptyArray.append(0)
     return EmptyArray
     
-EmptyArray = Create0InitArray()
+EmptyArray = Create0InitalizedArray()
 
 
 print EmptyArray
-main.InputListIntoScoutedArray("5431","Titan Robotics",6,0,False,True,30,EmptyArray)
+listmanagment.InputListIntoScoutedArray("5431","Titan Robotics",6,0,"NotPass","DoesPass",30,EmptyArray)
 print EmptyArray

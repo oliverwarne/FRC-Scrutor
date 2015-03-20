@@ -1,0 +1,19 @@
+import main
+
+def Create0InitArray():
+    EmptyArray = []
+    for n in range(0,7):
+        EmptyArray.append(0)
+    return EmptyArray
+    
+EmptyArray = Create0InitArray()
+
+
+# To pickle a new list (team), use 
+
+
+
+["5431","Titan Robotics",6,0,False,True,30]
+print EmptyArray
+print main.InputListIntoScoutedArray("5431","Titan Robotics",6,0,False,True,30,EmptyArray)
+print EmptyArray

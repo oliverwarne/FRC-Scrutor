@@ -1,4 +1,4 @@
-__name__ = listmang
+__name__ = "listmang"
 
 # Testing stuff
 Titan_Array = ["5431","Titan Robotics",6,0,False,True,30]
@@ -67,13 +67,6 @@ def ParseIntegerInput(TeamInt,Scouted_Array,DataType):
     if isinstance(TeamInt,int):
         Scouted_Array[DataType] = TeamInt
     return Scouted_Array            
-
-"""
-["TeamNum","TeamName",Totes,BinOnTotes,Litter,Chute,MatchNum]
-"""
-
-# To pickle a new list (team), use 
-# ParseIntegerInput(IntYouWantIn,ArrayYouWantToPutItIn,ParseDataType(TypeOfData))
 
 def ParseDataType(DataType):
     # This snippet parses the datatype that you want in order to set the index 

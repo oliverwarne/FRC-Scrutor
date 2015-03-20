@@ -9,11 +9,6 @@ def Create0InitArray():
 EmptyArray = Create0InitArray()
 
 
-# To pickle a new list (team), use 
-
-
-
-["5431","Titan Robotics",6,0,False,True,30]
 print EmptyArray
-print main.InputListIntoScoutedArray("5431","Titan Robotics",6,0,False,True,30,EmptyArray)
+main.InputListIntoScoutedArray("5431","Titan Robotics",6,0,False,True,30,EmptyArray)
 print EmptyArray

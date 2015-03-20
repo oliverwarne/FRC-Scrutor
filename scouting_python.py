@@ -54,11 +54,11 @@ def InputListIntoScoutedArray(TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,Mat
             if InputArray[3]:
                 ParseIntegerInput(BinOnTotes,Scouted_Array,"BinOnTotes")
             if InputArray[4]:
-                ParseIntegerInput(Litter,Scouted_Array,"Litter")
+                ParseBoolInput(Litter,Scouted_Array,"Litter")
             if InputArray[5]:
-                ParseIntegerInput(Chute,Scouted_Array,"TeamName")
-            if InputArray[5]:
-                ParseIntegerInput(TeamName,Scouted_Array,"TeamName")
+                ParseBoolInput(Chute,Scouted_Array,"Chute")
+            if InputArray[6]:
+                ParseIntegerInput(MatchNum,Scouted_Array,"MatchNum")
     return Scouted_Array
 
 
@@ -73,21 +73,33 @@ def ParseStringInput(TeamString,Scouted_Array,DataType):
             TeamString = str(TeamString)
             Scouted_Array[DataType] = TeamString
         except Exception:
-            print "helllo!"
+            print "Parse string error"
+    return Scouted_Array
         
 def ParseBoolInput(TeamBool,Scouted_Array,DataType):
     # Clean the string input, assign it to a variable, insert it into the list. NOT ABSOLUTE
     ### THIS NEEDS TO BE PUT IN THE REAL ORDER!!!! IT WILL BREAK IF ITS NOT!
     DataType = ParseDataType(DataType)
-    if isinstance(TeamString,str):
-        Scouted_Array[DataType] = TeamString
+    if isinstance(TeamBool,bool):
+        Scouted_Array[DataType] = TeamBool
     else:
         try:
-            TeamString = str(TeamString)
-            Scouted_Array[DataType] = TeamString
+            TeamBool = bool(TeamBool)
+            Scouted_Array[DataType] = TeamBool
         except Exception:
-            print "helllo!"
+            print "Parse Bool Error"
+    return Scouted_Array
             
+def ParseIntegerInput(TeamInt,Scouted_Array,DataType):
+    # TeamInt is any number that needs to parsed and put into the list.
+    # This snippet actually inserts the TeamInt at the DataType index pos.
+    # Datatype is, in reality, the index position of list. Should be passed to
+    # this function via the ParseDataType function
+    DataType = ParseDataType(DataType)
+    if isinstance(TeamInt,int):
+        Scouted_Array[DataType] = TeamInt
+    return Scouted_Array            
+
 """
 ["TeamNum","TeamName",Totes,BinOnTotes,Litter,Chute,MatchNum]
 """
@@ -116,20 +128,7 @@ def ParseDataType(DataType):
         print "DataType not recognized! Complain to Oliver"
     return DataType
 
-def ParseIntegerInput(TeamInt,Scouted_Array,DataType):
-    # TeamInt is any number that needs to parsed and put into the list.
-    # This snippet actually inserts the TeamInt at the DataType index pos.
-    # Datatype is, in reality, the index position of list. Should be passed to
-    # this function via the ParseDataType function
-    if isinstance(TeamInt,int):
-        Scouted_Array[DataType] = TeamInt
-    else:
-        try:
-            TeamInt = int(TeamInt)
-            Scouted_Array[DataType] = TeamInt
-        except Exception:
-            print "helllo!"
-    return Scouted_Array
+
 
     
 def PeekArray(Scouted_Array,Data):

@@ -1,4 +1,6 @@
 import pickle
+__name__ = "main"
+
 
 """
 Most of the functions return a bool value. The "large" function is going to check which conditionals must be met, and then 
@@ -32,12 +34,38 @@ NewArray2 = []
 
 ### LIST MANAGMENT BEGIN ###
 
+def Create0InitArray():
+    EmptyArray = []
+    for i in range(0,7):
+        EmptyArray.append(0)
+    return EmptyArray
 
+def InputListIntoScoutedArray(TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,MatchNum,Scouted_Array):
+    InputArray = [TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,MatchNum]
+    for i in InputArray:
+        if InputArray.index(i) <= 1: # 2 is the current # of string inputs in the array. I'm so sorry
+            if InputArray[0]:
+                ParseStringInput(TeamNum,Scouted_Array,"TeamNum")
+            if InputArray[1]:
+                ParseStringInput(TeamName,Scouted_Array,"TeamName")
+        if InputArray.index(i) > 1:
+            if InputArray[2]:
+                ParseIntegerInput(Totes,Scouted_Array,"Totes")
+            if InputArray[3]:
+                ParseIntegerInput(BinOnTotes,Scouted_Array,"BinOnTotes")
+            if InputArray[4]:
+                ParseIntegerInput(Litter,Scouted_Array,"Litter")
+            if InputArray[5]:
+                ParseIntegerInput(Chute,Scouted_Array,"TeamName")
+            if InputArray[5]:
+                ParseIntegerInput(TeamName,Scouted_Array,"TeamName")
+    return Scouted_Array
 
 
 def ParseStringInput(TeamString,Scouted_Array,DataType):
     # Clean the string input, assign it to a variable, insert it into the list. NOT ABSOLUTE
     ### THIS NEEDS TO BE PUT IN THE REAL ORDER!!!! IT WILL BREAK IF ITS NOT!
+    DataType = ParseDataType(DataType)
     if isinstance(TeamString,str):
         Scouted_Array[DataType] = TeamString
     else:
@@ -47,18 +75,33 @@ def ParseStringInput(TeamString,Scouted_Array,DataType):
         except Exception:
             print "helllo!"
         
+def ParseBoolInput(TeamBool,Scouted_Array,DataType):
+    # Clean the string input, assign it to a variable, insert it into the list. NOT ABSOLUTE
+    ### THIS NEEDS TO BE PUT IN THE REAL ORDER!!!! IT WILL BREAK IF ITS NOT!
+    DataType = ParseDataType(DataType)
+    if isinstance(TeamString,str):
+        Scouted_Array[DataType] = TeamString
+    else:
+        try:
+            TeamString = str(TeamString)
+            Scouted_Array[DataType] = TeamString
+        except Exception:
+            print "helllo!"
+            
 """
 ["TeamNum","TeamName",Totes,BinOnTotes,Litter,Chute,MatchNum]
 """
 
+# To pickle a new list (team), use 
+# ParseIntegerInput(IntYouWantIn,ArrayYouWantToPutItIn,ParseDataType(TypeOfData))
 
 def ParseDataType(DataType):
     # This snippet parses the datatype that you want in order to set the index 
     # at a position
     if DataType == "TeamNum":
-        DataType = 2
+        DataType = 0
     elif DataType == "TeamName":
-        DataType = 2
+        DataType = 1
     elif DataType == "Totes":
         DataType = 2
     elif DataType == "BinOnTotes":
@@ -86,8 +129,7 @@ def ParseIntegerInput(TeamInt,Scouted_Array,DataType):
             Scouted_Array[DataType] = TeamInt
         except Exception:
             print "helllo!"
-    
-
+    return Scouted_Array
 
     
 def PeekArray(Scouted_Array,Data):
@@ -184,7 +226,7 @@ def CheckMinimumScore(MinimumScoreBool,MinimumScore,ScoutedScore):
     else:
          return True
 
-### SCOUTED TEAM TESTING STUFF END ###
+### SCOUTED TEAM CHECKING STUFF END ###
 
 ### FILE LOADING STUFF BEGIN ###
 

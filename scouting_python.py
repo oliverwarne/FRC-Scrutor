@@ -1,7 +1,6 @@
 import pickle
 __name__ = "main"
 
-
 """
 Most of the functions return a bool value. The "large" function is going to check which conditionals must be met, and then 
 figures out which one  
@@ -43,22 +42,20 @@ def Create0InitArray():
 def InputListIntoScoutedArray(TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,MatchNum,Scouted_Array):
     InputArray = [TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,MatchNum]
     for i in InputArray:
-        if InputArray.index(i) <= 1: # 2 is the current # of string inputs in the array. I'm so sorry
-            if InputArray[0]:
-                ParseStringInput(TeamNum,Scouted_Array,"TeamNum")
-            if InputArray[1]:
-                ParseStringInput(TeamName,Scouted_Array,"TeamName")
-        if InputArray.index(i) > 1:
-            if InputArray[2]:
-                ParseIntegerInput(Totes,Scouted_Array,"Totes")
-            if InputArray[3]:
-                ParseIntegerInput(BinOnTotes,Scouted_Array,"BinOnTotes")
-            if InputArray[4]:
-                ParseBoolInput(Litter,Scouted_Array,"Litter")
-            if InputArray[5]:
-                ParseBoolInput(Chute,Scouted_Array,"Chute")
-            if InputArray[6]:
-                ParseIntegerInput(MatchNum,Scouted_Array,"MatchNum")
+        if InputArray[0]:
+            ParseStringInput(TeamNum,Scouted_Array,"TeamNum")
+        if InputArray[1]:
+            ParseStringInput(TeamName,Scouted_Array,"TeamName")
+        if InputArray[2]:
+            ParseIntegerInput(Totes,Scouted_Array,"Totes")
+        if InputArray[3]:
+            ParseIntegerInput(BinOnTotes,Scouted_Array,"BinOnTotes")
+        if InputArray[4]:
+            ParseBoolInput(Litter,Scouted_Array,"Litter")
+        if InputArray[5]:
+            ParseBoolInput(Chute,Scouted_Array,"Chute")
+        if InputArray[6]:
+            ParseIntegerInput(MatchNum,Scouted_Array,"MatchNum")
     return Scouted_Array
 
 

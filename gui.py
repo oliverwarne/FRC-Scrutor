@@ -1,10 +1,10 @@
-from tkinter import mainloop
-from tkinter import IntVar
-from tkinter import Checkbutton
-from tkinter import Button
-from tkinter import Tk
-from tkinter import Entry
-from tkinter import END
+from Tkinter import mainloop
+from Tkinter import IntVar
+from Tkinter import Checkbutton
+from Tkinter import Button
+from Tkinter import Tk
+from Tkinter import Entry
+from Tkinter import END
 master = Tk()
 
 def callback():

@@ -27,15 +27,15 @@ global ChuteBool
 ChuteBool = True
 
 # Scoring stuff
-global TotesPass,BinPass,LitterPass,ChutePass
-TotesPass = 1
-BinPass = 1
-LitterPass = 1
-ChutePass = 1
+global TotesValue,BinValue,LitterValue,ChuteValue
+TotesValue = 3
+BinValue = 1
+LitterValue = 1
+ChuteValue = 1
 
 # Absolute Needs
 global ABSTotesPass,ABSBinPass,ABSLitterPass,ABSChutePass
-ABSTotesPass = False
+ABSTotesPass = True
 ABSBinPass = True
 ABSLitterPass = True
 ABSChutePass = False
@@ -46,6 +46,8 @@ GlobalArrayName = [" "]
 NewArray = [0,0,0,0,0,0,0]
 NewArray2 = []
 NewBoolArray = [0,0,0,0]
+FilledBoolArray = [True,False,True,False]
+FilledBoolArrayTrue = [True,True,True,True]
 
 ### CUSTOMIZATION END ###
 
@@ -74,11 +76,33 @@ def CreateBoolArray(EmptyBoolArray,FilledArray):
     return EmptyBoolArray
 
 def BoolArrayIntoTeamScore(BoolArray):
-    TeamScore = BoolArray * 1
-    TeamScore = sum(TeamScore)
+    BoolArray[0] = BoolArray[0] * TotesValue
+    BoolArray[1] = BoolArray[1] * BinValue
+    BoolArray[2] = BoolArray[2] * LitterValue
+    BoolArray[3] = BoolArray[3] * ChuteValue 
+    TeamScore = sum(BoolArray)
+    print "The teamscore is" 
+    print TeamScore
+    print BoolArray[0]
     return TeamScore
 
-def PercentageCheckAbsolute(TeamScore,BoolArray):
+def BoolArrayIntoTeamScoreLoop(BoolArray):
+    for i in BoolArray:
+        z
+
+print BoolArrayIntoTeamScore(FilledBoolArrayTrue)
+
+def ReturnTeamScorePercentage(TeamScore):
+    ScoreList = [TotesValue,BinValue,LitterValue,ChuteValue]
+    MaxTotalScore = sum(ScoreList)
+    PercentagePropotion = float(TeamScore) / float(MaxTotalScore)
+    Percentage = PercentagePropotion * 100
+    return Percentage
+
+print ReturnTeamScorePercentage(BoolArrayIntoTeamScore(FilledBoolArrayTrue))
+
+def PercentageCheckAbsolute(BoolArray):
+    TeamScore = BoolArrayIntoTeamScore(BoolArray)
     if ABSTotesPass == True:
         if BoolArray[0] == True:
             ReturnTeamScorePercentage(TeamScore)
@@ -94,13 +118,14 @@ def PercentageCheckAbsolute(TeamScore,BoolArray):
             ReturnTeamScorePercentage(TeamScore)
         elif BoolArray[2] == False:
             Percentage = 0
-     
+    if ABSChutePass == True:
+        if BoolArray[3] == True:
+            ReturnTeamScorePercentage(TeamScore)
+        elif BoolArray[3] == False:
+            Percentage = 0
+    else:
+        Percentage = ReturnTeamScorePercentage(TeamScore)
     return Percentage
     
-def ReturnTeamScorePercentage(TeamScore):
-    ScoreList = [TotesPass,BinPass,LitterPass,ChutePass]
-    MaxTotalScore = sum(ScoreList)
-    PercentagePropotion = float(TeamScore) / float(MaxTotalScore)
-    Percentage = PercentagePropotion * 100
-    return Percentage
-    
+print PercentageCheckAbsolute(FilledBoolArrayTrue)
+print PercentageCheckAbsolute(FilledBoolArray)

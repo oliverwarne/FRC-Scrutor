@@ -7,25 +7,12 @@ import passcheck
 ### CUSTOMIZATION BEGIN ###
 
 # Miniumum of stuff
-MinTotes = 0
+global MinTotes
+MinTotes = 1
+global MinBins
 MinBins = 4
 
 # Bools for checking
-MinTotesBool = True
-MinBinsOnToteBool = True
-NeedsLitter = True
-RankedHigherBool = True
-MinimumScoreBool = False
-
-# Testing stuff
-Titan_Array = ["5431","Titan Robotics",6,0,False,True,30]
-GlobalArrayName = [" "]
-NewArray = [0,0,0,0,0,0,0]
-NewArray2 = []
-
-### CUSTOMIZATION END ###
-
-# TODO : This is moderately hacky. I need to get into classes.
 global MinTotesBool
 MinTotesBool = True
 global MinBinsOnToteBool
@@ -36,6 +23,18 @@ global RankedHigherBool
 RankedHigherBool = True
 global MinimumScoreBool
 MinimumScoreBool = False
+global ChuteBool
+ChuteBool = True
+
+
+# Testing stuff
+Titan_Array = ["5431","Titan Robotics",6,0,False,True,30]
+GlobalArrayName = [" "]
+NewArray = [0,0,0,0,0,0,0]
+NewArray2 = []
+NewBoolArray = [0,0,0,0]
+
+### CUSTOMIZATION END ###
 
 def InitalizeEmptyBoolArray():
     NewArray = []
@@ -44,9 +43,6 @@ def InitalizeEmptyBoolArray():
 
 
 def CreateBoolArray(EmptyBoolArray,FilledArray):
-    # TODO : Figure out what the heck i was trying to do while operating on 5
-    # hours of sleep. Future me. I'm sorry. This relates to scoring but my
-    # brain is impolding. 
     #Assigned integer positions inside of the old array
     TotesStackedInt = FilledArray[2]
     BinOnTotesInt = FilledArray[3]
@@ -54,8 +50,14 @@ def CreateBoolArray(EmptyBoolArray,FilledArray):
     Chute = FilledArray[5]
     
     #Assigns bool position inside the new array
-    TotesStackedBool = EmptyBoolArray[0]
-    BinOnTotesBool = EmptyBoolArray[1]
-    LitterBool = EmptyBoolArray[2]
-    ChuteBool = EmptyBoolArray[3]
     
+    
+    # It should be [Does have enough totes stacked, Does stack a bin on enough totes, does throw litter, does use chute]
+    
+    EmptyBoolArray[0] = passcheck.CheckTotesMin(MinTotesBool,MinTotes,TotesStackedInt)
+    EmptyBoolArray[1] = passcheck.CheckBinsMin(MinBinsOnToteBool,MinBins,BinOnTotesInt)
+    EmptyBoolArray[2] = passcheck.CheckLitter(NeedsLitter,Litter)
+    EmptyBoolArray[3] = passcheck.CheckChute(ChuteBool,Chute)
+    return EmptyBoolArray
+
+print CreateBoolArray(NewBoolArray,Titan_Array)

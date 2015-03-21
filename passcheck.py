@@ -1,4 +1,3 @@
-import pickle
 
 """
 Most of the functions return a bool value. The "large" function is going to check which conditionals must be met, and then 

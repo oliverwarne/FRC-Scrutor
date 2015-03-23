@@ -63,12 +63,7 @@ def CreateBoolArray(EmptyBoolArray,FilledArray):
     BinOnTotesInt = FilledArray[3]
     Litter = FilledArray[4]
     Chute = FilledArray[5]
-    
-    #Assigns bool position inside the new array
-    
-    
     # It should be [Does have enough totes stacked, Does stack a bin on enough totes, does throw litter, does use chute]
-    
     EmptyBoolArray[0] = passcheck.CheckTotesMin(MinTotesBool,MinTotes,TotesStackedInt)
     EmptyBoolArray[1] = passcheck.CheckBinsMin(MinBinsOnToteBool,MinBins,BinOnTotesInt)
     EmptyBoolArray[2] = passcheck.CheckLitter(NeedsLitter,Litter)
@@ -76,21 +71,12 @@ def CreateBoolArray(EmptyBoolArray,FilledArray):
     return EmptyBoolArray
 
 def BoolArrayIntoTeamScore(BoolArray):
-    BoolArray[0] = BoolArray[0] * TotesValue
-    BoolArray[1] = BoolArray[1] * BinValue
-    BoolArray[2] = BoolArray[2] * LitterValue
-    BoolArray[3] = BoolArray[3] * ChuteValue 
+    BoolArray[0] = BoolArray[0] * float(TotesValue)
+    BoolArray[1] = BoolArray[1] * float(BinValue)
+    BoolArray[2] = BoolArray[2] * float(LitterValue)
+    BoolArray[3] = BoolArray[3] * float(ChuteValue) 
     TeamScore = sum(BoolArray)
-    print "The teamscore is" 
-    print TeamScore
-    print BoolArray[0]
     return TeamScore
-
-def BoolArrayIntoTeamScoreLoop(BoolArray):
-    for i in BoolArray:
-        z
-
-print BoolArrayIntoTeamScore(FilledBoolArrayTrue)
 
 def ReturnTeamScorePercentage(TeamScore):
     ScoreList = [TotesValue,BinValue,LitterValue,ChuteValue]
@@ -99,33 +85,31 @@ def ReturnTeamScorePercentage(TeamScore):
     Percentage = PercentagePropotion * 100
     return Percentage
 
-print ReturnTeamScorePercentage(BoolArrayIntoTeamScore(FilledBoolArrayTrue))
+# TODO : Figure out why the heck this breaks if you call it twice. has to be
+# something to do with global variables. but what?
 
 def PercentageCheckAbsolute(BoolArray):
     TeamScore = BoolArrayIntoTeamScore(BoolArray)
-    if ABSTotesPass == True:
-        if BoolArray[0] == True:
+    if ABSTotesPass:
+        if BoolArray[0]:
             ReturnTeamScorePercentage(TeamScore)
-        elif BoolArray[0] == False:
+        else:
             Percentage = 0
-    if ABSBinPass == True:
-        if BoolArray[1] == True:
+    if ABSBinPass:
+        if BoolArray[1]:
             ReturnTeamScorePercentage(TeamScore)
-        elif BoolArray[1] == False:
+        else:
             Percentage = 0
-    if ABSLitterPass == True:
-        if BoolArray[2] == True:
+    if ABSLitterPass:
+        if BoolArray[2]:
             ReturnTeamScorePercentage(TeamScore)
-        elif BoolArray[2] == False:
+        else:
             Percentage = 0
-    if ABSChutePass == True:
-        if BoolArray[3] == True:
+    if ABSChutePass:
+        if BoolArray[3]:
             ReturnTeamScorePercentage(TeamScore)
-        elif BoolArray[3] == False:
+        else:
             Percentage = 0
-    else:
-        Percentage = ReturnTeamScorePercentage(TeamScore)
+    Percentage = ReturnTeamScorePercentage(TeamScore)
     return Percentage
-    
-print PercentageCheckAbsolute(FilledBoolArrayTrue)
-print PercentageCheckAbsolute(FilledBoolArray)
+

@@ -1,5 +1,3 @@
-import pickle
-__name__ = "main"
 
 """
 Most of the functions return a bool value. The "large" function is going to check which conditionals must be met, and then 
@@ -34,10 +32,10 @@ NewArray2 = []
 ### SCOUTED TEAM CHECKING STUFF BEGIN ###
 
 def CheckTotesMin(MinTotesBool,MinTotes,TotesStacked):
-    if MinTotesBool:
-        if MinTotes >= TotesStacked:
+    if MinTotesBool == True:
+        if MinTotes <= TotesStacked:
             return True
-        elif MinTotes < TotesStacked:
+        elif MinTotes > TotesStacked:
             return False
         else:
             raise NameError("!")
@@ -61,6 +59,14 @@ def CheckLitter(NeedsLitter,LitterPlaced):
     if NeedsLitter == LitterPlaced:
         return True
     if LitterPlaced == True and NeedsLitter == False:
+        return True
+    else:
+        return False
+        
+def CheckChute(ChuteBool,ChuteUsed):
+    if ChuteBool == ChuteUsed:
+        return True
+    elif ChuteUsed == True and ChuteBool == False:
         return True
     else:
         return False
@@ -92,18 +98,9 @@ def CheckMinimumScore(MinimumScoreBool,MinimumScore,ScoutedScore):
             True
     else:
          return True
+         
+
 
 ### SCOUTED TEAM CHECKING STUFF END ###
 
-### FILE LOADING STUFF BEGIN ###
-
-def GetNameAndTeamNum(Scouted_Array):
-    return Scouted_Array[0] + " : " + Scouted_Array[1] + ".p"
-    
-### FILE LOADING STUFF END ###
-
-def BIGFUNCTION(TeamNum,TeamName,TotesStacked,BinOnStacks,LitterInBin,ChuteUsed,MatchNum):
-    if CheckTotesMin(True,1,1):
-        print "hello"
-        
 

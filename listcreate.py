@@ -15,7 +15,6 @@ def Create0InitArray():
 
 ### LIST MANAGMENT BEGIN ###
 def InputListIntoScoutedArray(TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,MatchNum,Scouted_Array):
-    InputArray = [TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,MatchNum]
     ParseStringInput(TeamNum,Scouted_Array,"TeamNum")
     ParseStringInput(TeamName,Scouted_Array,"TeamName")
     ParseIntegerInput(Totes,Scouted_Array,"Totes")
@@ -24,8 +23,7 @@ def InputListIntoScoutedArray(TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,Mat
     ParseBoolInput(Chute,Scouted_Array,"Chute")
     ParseIntegerInput(MatchNum,Scouted_Array,"MatchNum")
     return Scouted_Array
-
-
+    
 def ParseStringInput(TeamString,Scouted_Array,DataType):
     # Clean the string input, assign it to a variable, insert it into the list. NOT ABSOLUTE
     ### THIS NEEDS TO BE PUT IN THE REAL ORDER!!!! IT WILL BREAK IF ITS NOT!

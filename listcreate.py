@@ -70,25 +70,16 @@ def ParseIntegerInput(TeamInt,Scouted_Array,DataType):
     return Scouted_Array            
 
 def ParseDataType(DataType):
-    # This snippet parses the datatype that you want in order to set the index 
-    # at a position
-    if DataType == "TeamNum":
-        DataType = 0
-    elif DataType == "TeamName":
-        DataType = 1
-    elif DataType == "Totes":
-        DataType = 2
-    elif DataType == "BinOnTotes":
-        DataType = 3
-    elif DataType == "Litter":
-        DataType = 4
-    elif DataType == "Chute":
-        DataType = 5
-    elif DataType == "MatchNum":
-        DataType = 6
-    else:
-        print "DataType not recognized! Complain to Oliver"
-    return DataType
+    IndexDict = {
+                'TeamNum': 0,
+                'TeamName': 1,
+                'Totes': 2,
+                'BinOnTotes': 3,
+                'Litter': 4,
+                'Chute': 5,
+                'MatchNum': 6
+                }
+    return IndexDict[DataType]
 
 
 

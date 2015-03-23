@@ -6,7 +6,7 @@ import passcheck
 
 ### CUSTOMIZATION BEGIN ###
 
-# TODO : Stick this in a config array
+# TODO : Stick this in a config file
 
 # Miniumum of stuff
 global MinTotes

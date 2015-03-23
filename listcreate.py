@@ -14,25 +14,15 @@ def Create0InitArray():
 ### CUSTOMIZATION END ###
 
 ### LIST MANAGMENT BEGIN ###
-
-
 def InputListIntoScoutedArray(TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,MatchNum,Scouted_Array):
     InputArray = [TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,MatchNum]
-    for i in InputArray:
-        if InputArray[0]:
-            ParseStringInput(TeamNum,Scouted_Array,"TeamNum")
-        if InputArray[1]:
-            ParseStringInput(TeamName,Scouted_Array,"TeamName")
-        if InputArray[2]:
-            ParseIntegerInput(Totes,Scouted_Array,"Totes")
-        if InputArray[3]:
-            ParseIntegerInput(BinOnTotes,Scouted_Array,"BinOnTotes")
-        if InputArray[4]:
-            ParseStringInput(Litter,Scouted_Array,"Litter")
-        if InputArray[5]:
-            ParseStringInput(Chute,Scouted_Array,"Chute")
-        if InputArray[6]:
-            ParseIntegerInput(MatchNum,Scouted_Array,"MatchNum")
+    ParseStringInput(TeamNum,Scouted_Array,"TeamNum")
+    ParseStringInput(TeamName,Scouted_Array,"TeamName")
+    ParseIntegerInput(Totes,Scouted_Array,"Totes")
+    ParseIntegerInput(BinOnTotes,Scouted_Array,"BinOnTotes")
+    ParseBoolInput(Litter,Scouted_Array,"Litter")
+    ParseBoolInput(Chute,Scouted_Array,"Chute")
+    ParseIntegerInput(MatchNum,Scouted_Array,"MatchNum")
     return Scouted_Array
 
 

@@ -11,24 +11,17 @@ def PeekArray(Scouted_Array,Data):
     TeamChute = Scouted_Array[5]
     TeamMatchNum = Scouted_Array[6]
 
-    if Data == "TeamNum":
-        Data = TeamNum
-    elif Data == "TeamName":
-        Data = TeamName
-    elif Data == "TeamTotesStacked":
-        Data = TeamTotesStacked
-    elif Data == "TeamBinOnTotes":
-        Data = TeamBinOnTotes
-    elif Data == "TeamLitter":
-        Data = TeamLitter
-    elif Data == "TeamChute":
-        Data = TeamChute
-    elif Data == "TeamMatchNum":
-        Data = TeamMatchNum
-    else:
-        # TODO : Error raising and handeling
-        print "Wrong input!"
-    return Data
+    IndexDict = {
+                'TeamNum':TeamNum,
+                'TeamName':TeamName,
+                'TeamTotesStacked':TeamTotesStacked,
+                'TeamBinOnTotes':TeamBinOnTotes,
+                'TeamLitter':TeamLitter,
+                'TeamChute':TeamChute,
+                'TeamMatchNum':TeamMatchNum
+                }
+    
+    return IndexDict[Data]
 
 def PeekArrayHACK(Scouted_Array,Data):
     # This hack turns the string "False" and "True" into real bools to be passed
@@ -36,25 +29,18 @@ def PeekArrayHACK(Scouted_Array,Data):
     TeamName = Scouted_Array[1]
     TeamTotesStacked = Scouted_Array[2]
     TeamBinOnTotes = Scouted_Array[3]
-    TeamLitter = Scouted_Array[4]
-    TeamChute = Scouted_Array[5]
+    TeamLitter = bool(Scouted_Array[4])
+    TeamChute = bool(Scouted_Array[5])
     TeamMatchNum = Scouted_Array[6]
     
-    if Data == "TeamNum":
-        Data = TeamNum
-    elif Data == "TeamName":
-        Data = TeamName
-    elif Data == "TeamTotesStacked":
-        Data = TeamTotesStacked
-    elif Data == "TeamBinOnTotes":
-        Data = TeamBinOnTotes
-    elif Data == "TeamLitter":
-        Data = bool(TeamLitter)
-    elif Data == "TeamChute":
-        Data = bool(TeamChute)
-    elif Data == "TeamMatchNum":
-        Data = TeamMatchNum
-    else:
-        # TODO : Error raising and handeling
-        print "Wrong input!"
-    return Data
+    IndexDict = {
+                'TeamNum':TeamNum,
+                'TeamName':TeamName,
+                'TeamTotesStacked':TeamTotesStacked,
+                'TeamBinOnTotes':TeamBinOnTotes,
+                'TeamLitter':TeamLitter,
+                'TeamChute':TeamChute,
+                'TeamMatchNum':TeamMatchNum
+                }
+    
+    return IndexDict[Data]

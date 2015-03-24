@@ -112,6 +112,5 @@ def PercentageCheckAbsolute(BoolArray):
             ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    Percentage = ReturnTeamScorePercentage(TeamScore)
     return Percentage
 

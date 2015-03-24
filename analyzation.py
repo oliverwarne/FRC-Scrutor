@@ -37,9 +37,9 @@ ChuteValue = 1
 
 # Absolute Needs
 global ABSTotesPass,ABSBinPass,ABSLitterPass,ABSChutePass
-ABSTotesPass = True
-ABSBinPass = True
-ABSLitterPass = True
+ABSTotesPass = False
+ABSBinPass = False
+ABSLitterPass = False
 ABSChutePass = False
 
 # Testing stuff
@@ -55,17 +55,19 @@ FilledBoolArrayTrue = [True,True,True,True]
 
 def InitalizeEmptyBoolArray():
     NewArray = []
-    NewArray.append(0) * 3
+    for num in range(0,5):
+        NewArray.append(0) 
     return NewArray
 
 
-def CreateBoolArray(EmptyBoolArray,FilledArray):
+def CreateBoolArray(FilledArray):
     #Assigned integer positions inside of the old array
     TotesStackedInt = FilledArray[2]
     BinOnTotesInt = FilledArray[3]
     Litter = FilledArray[4]
     Chute = FilledArray[5]
     # It should be [Does have enough totes stacked, Does stack a bin on enough totes, does throw litter, does use chute]
+    EmptyBoolArray = InitalizeEmptyBoolArray()
     EmptyBoolArray[0] = passcheck.CheckTotesMin(MinTotesBool,MinTotes,TotesStackedInt)
     EmptyBoolArray[1] = passcheck.CheckBinsMin(MinBinsOnToteBool,MinBins,BinOnTotesInt)
     EmptyBoolArray[2] = passcheck.CheckLitter(NeedsLitter,Litter)
@@ -90,7 +92,8 @@ def ReturnTeamScorePercentage(TeamScore):
 # TODO : Figure out why the heck this breaks if you call it twice. has to be
 # something to do with global variables. but what?
 
-def PercentageCheckAbsolute(BoolArray):
+def PercentageCheckAbsolute(FilledArray):
+    BoolArray = CreateBoolArray(FilledArray)
     TeamScore = BoolArrayIntoTeamScore(BoolArray)
     if ABSTotesPass:
         if BoolArray[0]:
@@ -112,5 +115,6 @@ def PercentageCheckAbsolute(BoolArray):
             ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
+    else:
+        Percentage = ReturnTeamScorePercentage(TeamScore)
     return Percentage
-

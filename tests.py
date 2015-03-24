@@ -1,6 +1,7 @@
-import main
-import listcreation
+
+import listcreate
 import listinterp
+import analyzation
 
 
 def Create0InitalizedArray():
@@ -12,15 +13,24 @@ def Create0InitalizedArray():
 EmptyArray = Create0InitalizedArray()
 EmptyArray2 = Create0InitalizedArray()
 
-
+### LIST CREATE TESTS ###
+print "LIST CREATE"
 print EmptyArray
-listcreation.InputListIntoScoutedArray("5431","Titan Robotics",6,0,"False","True",30,EmptyArray)
+listcreate.InputListIntoScoutedArray("5431","Titan Robotics",6,0,False,True,30,EmptyArray)
+# Should return ["5431","Titan Robotics",6,0,False,True,30,EmptyArray]
 print EmptyArray
 
-print listinterp.PeekArray(EmptyArray,"TeamChute")
-print listinterp.PeekArrayHACK(EmptyArray,"TeamChute")
+#### LIST INTERP TEST ###
+print "LIST INTERP"
+print listinterp.PeekArrayTest(EmptyArray,"TeamChute")
+# Should return True
+print listinterp.PeekArrayTest(EmptyArray2,"TeamChute")
+# Should return 0
 
-print type(listinterp.PeekArray(EmptyArray,"TeamChute"))
-print type(listinterp.PeekArrayHACK(EmptyArray,"TeamChute"))
+### ANALYZATION TESTS ###
+print "ANALYZATION"
+print analyzation.PercentageCheckAbsolute(EmptyArray)
+
+
 
 

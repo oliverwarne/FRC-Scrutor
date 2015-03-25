@@ -1,13 +1,13 @@
-
-"""
-Most of the functions return a bool value. 
-
-Data should be parsed as: ["TEAM #","Team Name",INT:Totes stacked reliably,INT:On how many totes can they stack a bin reliably,
-BOOL:Can they place a litter in the bin?,BOOL: Do they use the chute?,INT:Match #]
+######
+#Most of the functions return a bool value. 
+#
+#Data should be parsed as: ["TEAM #","Team Name",INT:Totes stacked reliably,INT:On how many totes can they stack a bin reliably,
+#BOOL:Can they place a litter in the bin?,BOOL: Do they use the chute?,INT:Match #]
 ### EXAMPLE ###
-["5431","Titan Robotics",6,0,False,True,30]
-["TeamNum","TeamName",Totes,BinOnTotes,Litter,Chute,MatchNum]
-"""
+#["5431","Titan Robotics",6,0,False,True,30]
+#["TeamNum","TeamName",Totes,BinOnTotes,Litter,Chute,MatchNum]
+######
+
 ### CUSTOMIZATION BEGIN ###
 
 #TODO Stick this in a config file

@@ -3,6 +3,13 @@ __name__ = "listcreate"
 ### LIST CREATION BEGIN ###
 
 def InputListIntoScoutedArray(TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,MatchNum,Scouted_Array):
+    # You pass this function the array that you want to fill up, and all the ***CLEANED*** data that
+    # you want. This WILL likely break if you pass it dirty data. It does have a little bit of cleaning
+    # where it tries to turn the thing that its passed into an int/str/bool, but it's still going to 
+    # mess up if you try to pass the bool a string that isn't a "True"/"False" or something similar 
+    # to that. 
+    # This is pretty ugly, and you could improve by having it dynamically detect 
+    # what type of data is input, and then use the appropriate input parsing.
     ParseStringInput(TeamNum,Scouted_Array,"TeamNum")
     ParseStringInput(TeamName,Scouted_Array,"TeamName")
     ParseIntegerInput(Totes,Scouted_Array,"Totes")
@@ -12,7 +19,6 @@ def InputListIntoScoutedArray(TeamNum,TeamName,Totes,BinOnTotes,Litter,Chute,Mat
     ParseIntegerInput(MatchNum,Scouted_Array,"MatchNum")
     return Scouted_Array
     
-
 def ParseStringInput(TeamString,Scouted_Array,DataType):
     # Clean the string input, assign it to a variable, insert it into the list. NOT ABSOLUTE
     ### THIS NEEDS TO BE PUT IN THE REAL ORDER!!!! IT WILL BREAK IF ITS NOT!
@@ -49,6 +55,8 @@ def ParseBoolInput(TeamBool,Scouted_Array,DataType):
     return Scouted_Array
 
 def ParseDataType(DataType):
+    # This accepts the datatype that you're looking for, and returns the index 
+    # of what it should be in the array.
     IndexDict = {
                 'TeamNum': 0,
                 'TeamName': 1,

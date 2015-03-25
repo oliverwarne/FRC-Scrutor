@@ -10,6 +10,8 @@ BOOL:Can they place a litter in the bin?,BOOL: Do they use the chute?,INT:Match 
 """
 ### CUSTOMIZATION BEGIN ###
 
+#TODO:Refactor this gross code
+
 # Miniumum of stuff
 MinTotes = 0
 MinBins = 4
@@ -32,7 +34,7 @@ NewArray2 = []
 ### SCOUTED TEAM CHECKING STUFF BEGIN ###
 
 def CheckTotesMin(MinTotesBool,MinTotes,TotesStacked):
-    if MinTotesBool == True:
+    if MinTotesBool:
         if MinTotes <= TotesStacked:
             return True
         elif MinTotes > TotesStacked:
@@ -42,7 +44,6 @@ def CheckTotesMin(MinTotesBool,MinTotes,TotesStacked):
     else:
         return True
    
-
 def CheckBinsMin(MinBinsOnToteBool,MinBins,BinOnTotesStacked):
     if MinBinsOnToteBool:
         if MinBins <= BinOnTotesStacked:

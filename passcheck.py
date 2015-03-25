@@ -1,7 +1,7 @@
 
 """
-Most of the functions return a bool value. The "large" function is going to check which conditionals must be met, and then 
-figures out which one  
+Most of the functions return a bool value. 
+
 Data should be parsed as: ["TEAM #","Team Name",INT:Totes stacked reliably,INT:On how many totes can they stack a bin reliably,
 BOOL:Can they place a litter in the bin?,BOOL: Do they use the chute?,INT:Match #]
 ### EXAMPLE ###
@@ -10,7 +10,7 @@ BOOL:Can they place a litter in the bin?,BOOL: Do they use the chute?,INT:Match 
 """
 ### CUSTOMIZATION BEGIN ###
 
-#TODO:Refactor this gross code
+#TODO Stick this in a config file
 
 # Miniumum of stuff
 MinTotes = 0
@@ -22,12 +22,6 @@ MinBinsOnToteBool = True
 NeedsLitter = True
 RankedHigherBool = True
 MinimumScoreBool = False
-
-# Testing stuff
-Titan_Array = ["5431","Titan Robotics",6,0,False,True,30]
-GlobalArrayName = [" "]
-NewArray = [0,0,0,0,0,0,0]
-NewArray2 = []
 
 ### CUSTOMIZATION END ###
 
@@ -55,7 +49,6 @@ def CheckBinsMin(MinBinsOnToteBool,MinBins,BinOnTotesStacked):
     else:
         return True
         
-
 def CheckLitter(NeedsLitter,LitterPlaced):
     if NeedsLitter == LitterPlaced:
         return True
@@ -99,8 +92,6 @@ def CheckMinimumScore(MinimumScoreBool,MinimumScore,ScoutedScore):
             True
     else:
          return True
-         
-
 
 ### SCOUTED TEAM CHECKING STUFF END ###
 

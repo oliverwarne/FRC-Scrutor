@@ -16,7 +16,10 @@ LitterValue = 1
 ChuteValue = 1
 
 # Absolute Needs
-
+ABSTotesPass = True
+ABSBinPass = False
+ABSLitterPass = False
+ABSChutePass = True
 
 ### CUSTOMIZATION FOR ANALYZATION.py END ###
 
@@ -26,15 +29,6 @@ ChuteValue = 1
 MinTotes = 0
 MinBins = 4
 MinScore = 0
-
-
-## Bools for checking
-#MinTotesBool = True
-#MinBinsOnToteBool = True
-#NeedsLitter = True
-#RankedHigherBool = True
-#MinimumScoreBool = False
-
 
 ### CUSTOMIZATION FOR PASSCHECK.py END ###
 

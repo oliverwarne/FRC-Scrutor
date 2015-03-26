@@ -8,13 +8,6 @@
 MinTotes = 1
 MinBins = 1
 
-# Bools for checking
-MinTotesBool = True
-MinBinsOnToteBool = True
-NeedsLitter = True
-RankedHigherBool = True
-MinimumScoreBool = False
-ChuteBool = True
 
 # Scoring stuff
 TotesValue = 2
@@ -23,10 +16,7 @@ LitterValue = 1
 ChuteValue = 1
 
 # Absolute Needs
-ABSTotesPass = True
-ABSBinPass = True
-ABSLitterPass = True
-ABSChutePass = True
+
 
 ### CUSTOMIZATION FOR ANALYZATION.py END ###
 

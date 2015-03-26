@@ -74,17 +74,17 @@ def PercentageCheckAbsolute(FilledArray):
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if config.ABSBinPass:
+    if config.ABSBinPass and Percentage != 0:
         if BoolArray[1]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if config.ABSLitterPass:
+    if config.ABSLitterPass and Percentage != 0:
         if BoolArray[2]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if config.ABSChutePass:
+    if config.ABSChutePass and Percentage != 0:
         if BoolArray[3]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:

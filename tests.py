@@ -29,8 +29,3 @@ print listinterp.PeekArrayTest(EmptyArray2,"TeamChute")
 print "ANALYZATION"
 print analyzation.PercentageCheckAbsolute(EmptyArray)
 # TODO : Figure out how to write a test for this
-
-print 5 + 5 + 5 + 5.3
-
-
-

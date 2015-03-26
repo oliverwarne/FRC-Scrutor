@@ -13,39 +13,29 @@ import config
 ### SCOUTED TEAM CHECKING STUFF BEGIN ###
 
 def CheckTotesMin(TotesStacked):
-    if config.MinTotesBool:
-        if config.MinTotes <= TotesStacked:
-            return True
-        elif config.MinTotes > TotesStacked:
-            return False
-        else:
-            raise NameError("!")
+    if config.MinTotes <= TotesStacked:
+        return True
+    elif config.MinTotes > TotesStacked:
+        return False
     else:
         return True
    
 def CheckBinsMin(BinOnTotesStacked):
-    if config.MinBinsOnToteBool:
-        if config.MinBins <= BinOnTotesStacked:
-            return True
-        elif config.MinBins > BinOnTotesStacked:
-            return False
-        else:
-            raise NameError("BinOnTotesStacked is too low!")
+    if config.MinBins <= BinOnTotesStacked:
+        return True
+    elif config.MinBins > BinOnTotesStacked:
+        return False
     else:
         return True
         
 def CheckLitter(LitterPlaced):
-    if config.NeedsLitter == LitterPlaced:
-        return True
-    if LitterPlaced == True and config.NeedsLitter == False:
+    if LitterPlaced:
         return True
     else:
         return False
         
 def CheckChute(ChuteUsed):
-    if config.ChuteBool == ChuteUsed:
-        return True
-    elif ChuteUsed == True and config.ChuteBool == False:
+    if ChuteUsed:
         return True
     else:
         return False
@@ -69,11 +59,11 @@ def CheckRankedHigherData(OurRank,ScoutedRank):
     else: 
         return True
         
-def CheckMinimumScore(MinimumScore,ScoutedScore):
-    if config.MinimumScoreBool:
-        if MinimumScore > ScoutedScore:
+def CheckMinScore(MinScore,ScoutedScore):
+    if config.MinScore:
+        if MinScore > ScoutedScore:
             return False
-        elif MinimumScore <= ScoutedScore:
+        elif MinScore <= ScoutedScore:
             True
     else:
          return True

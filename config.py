@@ -53,6 +53,8 @@ NeedsLitter = True
 RankedHigherBool = True
 MinimumScoreBool = False
 
+### CUSTOMIZATION FOR PASSCHECK.py END ###
+
 #########################
 ### CUSTOMIZATION END ###
 #########################

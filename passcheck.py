@@ -1,3 +1,5 @@
+import config
+
 ######
 #Most of the functions return a bool value. 
 #
@@ -8,73 +10,56 @@
 #["TeamNum","TeamName",Totes,BinOnTotes,Litter,Chute,MatchNum]
 ######
 
-### CUSTOMIZATION BEGIN ###
-
-#TODO Stick this in a config file
-
-# Miniumum of stuff
-MinTotes = 0
-MinBins = 4
-
-# Bools for checking
-MinTotesBool = True
-MinBinsOnToteBool = True
-NeedsLitter = True
-RankedHigherBool = True
-MinimumScoreBool = False
-
-### CUSTOMIZATION END ###
-
 ### SCOUTED TEAM CHECKING STUFF BEGIN ###
 
-def CheckTotesMin(MinTotesBool,MinTotes,TotesStacked):
-    if MinTotesBool:
-        if MinTotes <= TotesStacked:
+def CheckTotesMin(TotesStacked):
+    if config.MinTotesBool:
+        if config.MinTotes <= TotesStacked:
             return True
-        elif MinTotes > TotesStacked:
+        elif config.MinTotes > TotesStacked:
             return False
         else:
             raise NameError("!")
     else:
         return True
    
-def CheckBinsMin(MinBinsOnToteBool,MinBins,BinOnTotesStacked):
-    if MinBinsOnToteBool:
-        if MinBins <= BinOnTotesStacked:
+def CheckBinsMin(BinOnTotesStacked):
+    if config.MinBinsOnToteBool:
+        if config.MinBins <= BinOnTotesStacked:
             return True
-        elif MinBins > BinOnTotesStacked:
+        elif config.MinBins > BinOnTotesStacked:
             return False
         else:
             raise NameError("BinOnTotesStacked is too low!")
     else:
         return True
         
-def CheckLitter(NeedsLitter,LitterPlaced):
-    if NeedsLitter == LitterPlaced:
+def CheckLitter(LitterPlaced):
+    if config.NeedsLitter == LitterPlaced:
         return True
-    if LitterPlaced == True and NeedsLitter == False:
-        return True
-    else:
-        return False
-        
-def CheckChute(ChuteBool,ChuteUsed):
-    if ChuteBool == ChuteUsed:
-        return True
-    elif ChuteUsed == True and ChuteBool == False:
+    if LitterPlaced == True and config.NeedsLitter == False:
         return True
     else:
         return False
         
-def CheckRankedHigherABS(RankedHigherBool,RankedHigher):
-    if RankedHigherBool == RankedHigher:
+def CheckChute(ChuteUsed):
+    if config.ChuteBool == ChuteUsed:
         return True
-    if RankedHigher == True and RankedHigherBool == False:
+    elif ChuteUsed == True and config.ChuteBool == False:
+        return True
+    else:
+        return False
+        
+def CheckRankedHigherABS(RankedHigher):
+    if config.RankedHigherBool == RankedHigher:
+        return True
+    if RankedHigher == True and config.RankedHigherBool == False:
         return True
     else:
         return False
 
-def CheckRankedHigherData(RankedHigherBool,OurRank,ScoutedRank):
-    if RankedHigherBool:
+def CheckRankedHigherData(OurRank,ScoutedRank):
+    if config.RankedHigherBool:
         if OurRank < ScoutedRank:
             return True
         elif OurRank > ScoutedRank:
@@ -84,8 +69,8 @@ def CheckRankedHigherData(RankedHigherBool,OurRank,ScoutedRank):
     else: 
         return True
         
-def CheckMinimumScore(MinimumScoreBool,MinimumScore,ScoutedScore):
-    if MinimumScoreBool:
+def CheckMinimumScore(MinimumScore,ScoutedScore):
+    if config.MinimumScoreBool:
         if MinimumScore > ScoutedScore:
             return False
         elif MinimumScore <= ScoutedScore:

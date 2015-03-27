@@ -4,17 +4,15 @@
 
 ### CUSTOMIZATION FOR ANALYZATION.py BEGIN ###
 
-# Miniumum of stuff
-MinTotes = 1
-MinBins = 1
-
-# Scoring stuff
+### Scoring stuff
+# How valuable something is to us
 TotesValue = 2
 BinValue = 1
 LitterValue = 1
 ChuteValue = 1
 
-# Absolute Needs
+### Absolute Needs
+# Things that we absoluetly need. If they don't have it, percentage will be 0.
 ABSTotesPass = False
 ABSBinPass = False
 ABSLitterPass = False
@@ -24,9 +22,10 @@ ABSChutePass = False
 
 ### CUSTOMIZATION FOR PASSCHECK.py BEGIN ###
 
-# Miniumum of stuff
-MinTotes = 0
-MinBins = 4
+### Miniumum of stuff
+# Minimum of how many totes can be in a stack
+MinTotes = 1
+# Minimum of on how many totes they can place a bin
 MinScore = 0
 
 ### CUSTOMIZATION FOR PASSCHECK.py END ###

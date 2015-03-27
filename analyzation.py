@@ -1,46 +1,10 @@
 import passcheck
+import config
 
 # General overview. This module should accept a filled array, then fill another 
 # array (of the 5 things it checks for), with True/False based on if it passes
 # the checks from passcheck or not.
 
-### CUSTOMIZATION BEGIN ###
-
-# TODO : Stick this in a config file
-
-# Miniumum of stuff
-global MinTotes
-MinTotes = 1
-global MinBins
-MinBins = 1
-
-# Bools for checking
-global MinTotesBool
-MinTotesBool = True
-global MinBinsOnToteBool
-MinBinsOnToteBool = True
-global NeedsLitter
-NeedsLitter = True
-global RankedHigherBool
-RankedHigherBool = True
-global MinimumScoreBool
-MinimumScoreBool = False
-global ChuteBool
-ChuteBool = True
-
-# Scoring stuff
-global TotesValue,BinValue,LitterValue,ChuteValue
-TotesValue = 2
-BinValue = 1
-LitterValue = 1
-ChuteValue = 1
-
-# Absolute Needs
-global ABSTotesPass,ABSBinPass,ABSLitterPass,ABSChutePass
-ABSTotesPass = True
-ABSBinPass = True
-ABSLitterPass = True
-ABSChutePass = True
 
 # Testing stuff
 Titan_Array = ["5431","Titan Robotics",6,0,False,True,30]
@@ -71,10 +35,10 @@ def CreateBoolArray(FilledArray):
     Chute = FilledArray[5]
     # It should be [Does have enough totes stacked, Does stack a bin on enough totes, does throw litter, does use chute]
     EmptyBoolArray = InitalizeEmptyBoolArray()
-    EmptyBoolArray[0] = passcheck.CheckTotesMin(MinTotesBool,MinTotes,TotesStackedInt)
-    EmptyBoolArray[1] = passcheck.CheckBinsMin(MinBinsOnToteBool,MinBins,BinOnTotesInt)
-    EmptyBoolArray[2] = passcheck.CheckLitter(NeedsLitter,Litter)
-    EmptyBoolArray[3] = passcheck.CheckChute(ChuteBool,Chute)
+    EmptyBoolArray[0] = passcheck.CheckTotesMin(TotesStackedInt)
+    EmptyBoolArray[1] = passcheck.CheckBinsMin(BinOnTotesInt)
+    EmptyBoolArray[2] = passcheck.CheckLitter(Litter)
+    EmptyBoolArray[3] = passcheck.CheckChute(Chute)
     return EmptyBoolArray
 
 def BoolArrayIntoTeamScore(BoolArray):
@@ -82,10 +46,10 @@ def BoolArrayIntoTeamScore(BoolArray):
     # multiplying the global value by the Bool which is turned into 
     # 1's and 0's by the multiplying operator. It is a float to accommodate
     # non-whole numbers
-    BoolArray[0] = BoolArray[0] * float(TotesValue)
-    BoolArray[1] = BoolArray[1] * float(BinValue)
-    BoolArray[2] = BoolArray[2] * float(LitterValue)
-    BoolArray[3] = BoolArray[3] * float(ChuteValue) 
+    BoolArray[0] = BoolArray[0] * float(config.TotesValue)
+    BoolArray[1] = BoolArray[1] * float(config.BinValue)
+    BoolArray[2] = BoolArray[2] * float(config.LitterValue)
+    BoolArray[3] = BoolArray[3] * float(config.ChuteValue) 
     TeamScore = sum(BoolArray)
     return TeamScore
 
@@ -93,7 +57,7 @@ def ReturnTeamScorePercentage(TeamScore):
     # Turns the team score into a percentage via creating a proportion from
     # the maximum possible score and the score received. 
     # MaxTotalScore is the sum of the maximum values.
-    MaxTotalScore = TotesValue + BinValue + LitterValue + ChuteValue
+    MaxTotalScore = config.TotesValue + config.BinValue + config.LitterValue + config.ChuteValue
     PercentagePropotion = float(TeamScore) / float(MaxTotalScore)
     Percentage = PercentagePropotion * 100
     return Percentage
@@ -105,26 +69,26 @@ def PercentageCheckAbsolute(FilledArray):
     # index on the array is true. If it is, then it calculates the team score. If it
     # is false, then it sets percentage at 0.
     # If none of the "must haves" are true, then it setss p
-    if ABSTotesPass:
+    if config.ABSTotesPass:
         if BoolArray[0]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if ABSBinPass:
+    if config.ABSBinPass and Percentage != 0:
         if BoolArray[1]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if ABSLitterPass:
+    if config.ABSLitterPass and Percentage != 0:
         if BoolArray[2]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if ABSChutePass:
+    if config.ABSChutePass and Percentage != 0:
         if BoolArray[3]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if not ABSTotesPass and not ABSBinPass and not ABSLitterPass and not ABSChutePass:
+    if not config.ABSTotesPass and not config.ABSBinPass and not config.ABSLitterPass and not config.ABSChutePass:
         Percentage = ReturnTeamScorePercentage(TeamScore)
     return Percentage

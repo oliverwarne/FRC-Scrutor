@@ -22,7 +22,7 @@ ABSChutePass = False
 
 ### CUSTOMIZATION FOR PASSCHECK.py BEGIN ###
 
-### Miniumum of stuff
+### Minimum of stuff
 # Minimum of how many totes can be in a stack
 MinTotes = 1
 # Minimum of on how many totes they can place a bin

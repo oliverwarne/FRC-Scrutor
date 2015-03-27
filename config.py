@@ -16,10 +16,10 @@ LitterValue = 1
 ChuteValue = 1
 
 # Absolute Needs
-ABSTotesPass = True
+ABSTotesPass = False
 ABSBinPass = False
 ABSLitterPass = False
-ABSChutePass = True
+ABSChutePass = False
 
 ### CUSTOMIZATION FOR ANALYZATION.py END ###
 

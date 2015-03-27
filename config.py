@@ -8,7 +8,6 @@
 MinTotes = 1
 MinBins = 1
 
-
 # Scoring stuff
 TotesValue = 2
 BinValue = 1

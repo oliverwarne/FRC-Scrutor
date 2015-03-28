@@ -1,4 +1,5 @@
-from listcreation import InputListIntoScoutedArray
+from listcreate import InputListIntoScoutedArray
+from filecreate import GetNameAndTeamNum
 from Tkinter import mainloop
 from Tkinter import IntVar
 from Tkinter import Checkbutton
@@ -13,6 +14,10 @@ def callback():
     s = bool(re2.get())
     # TODO : use listcreation methods to sanitize the inputs before being placed into a new array
     InfoArray = [e.get(),g.get(),m.get(),h.get(),r.get(),q,s]
+    return InfoArray
+
+def 
+
 e = Entry(master)
 e.pack()
 e.delete(0, END)

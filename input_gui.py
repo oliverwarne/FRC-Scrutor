@@ -1,5 +1,6 @@
 from listcreate import InputListIntoScoutedArray
 from filecreate import GetNameAndTeamNum
+from filecreate import WriteArrayToText
 from Tkinter import mainloop
 from Tkinter import IntVar
 from Tkinter import Checkbutton
@@ -16,7 +17,10 @@ def callback():
     InfoArray = [e.get(),g.get(),m.get(),h.get(),r.get(),q,s]
     return InfoArray
 
-def 
+def InputToText():
+    array = callback()
+    listcreate.WriteArrayToText(array)
+    
 
 e = Entry(master)
 e.pack()

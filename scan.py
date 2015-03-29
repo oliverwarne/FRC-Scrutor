@@ -2,10 +2,14 @@ import analyzation
 import os
 import glob
 import time
+import array
+from ast import literal_eval
 os.chdir("TestTexts/")
-config = open("config.txt","a")
+scanned = open("scanned.txt","a")
 for file in glob.glob("*.txt"):
     f = open(file)
     for line in f:
-        print line
+        line = line.split[1]
         print analyzation.BoolArrayIntoTeamScore(line)
+        
+        

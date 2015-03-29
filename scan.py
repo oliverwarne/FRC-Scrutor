@@ -5,7 +5,7 @@ import glob
 import time
 import ast
 import string
-os.chdir("TestTexts/")
+os.chdir("davids-thing/TestTexts/")
 scanned = open("scanned.cfg","rw+")
 finalpercentage = open("percentage.file","a")
 
@@ -25,6 +25,11 @@ for file in glob.glob("*.txt"):
             finalpercentage.write(finalarray + "\n")
     else:
         print "This array has already been inserted"
+
+scanned.close
+f.close
+finalpercentage.close
+
         
 
     

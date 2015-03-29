@@ -9,6 +9,6 @@ scanned = open("scanned.txt","a")
 for file in glob.glob("*.txt"):
     f = open(file)
     for line in f:
-        line = ast.literal_eval(line)
+        line = eval(line)
         lineperc = analyzation.PercentageCheckAbsolute(line)
         print lineperc

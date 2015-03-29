@@ -8,6 +8,7 @@ import config
 
 # Testing stuff
 Titan_Array = ["5431","Titan Robotics",6,0,False,True,30]
+
 GlobalArrayName = [" "]
 NewArray = [0,0,0,0,0,0,0]
 NewArray2 = []

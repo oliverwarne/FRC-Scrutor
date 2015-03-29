@@ -15,12 +15,7 @@ def callback():
     s = bool(re2.get())
     # TODO : use listcreation methods to sanitize the inputs before being placed into a new array
     InfoArray = [e.get(),g.get(),m.get(),h.get(),r.get(),q,s]
-    return InfoArray
-
-def InputToText():
-    array = callback()
-    listcreate.WriteArrayToText(array)
-    
+    WriteArrayToText(InfoArray)
 
 e = Entry(master)
 e.pack()

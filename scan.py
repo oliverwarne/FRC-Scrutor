@@ -6,7 +6,7 @@ import time
 import ast
 import string
 os.chdir("davids-thing/TestTexts/")
-scanned = open("scanned.cfg","rw+")
+scanned = open("scanned.cfg","a+")
 finalpercentage = open("percentage.file","a")
 
 for file in glob.glob("*.txt"):

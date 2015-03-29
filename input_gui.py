@@ -13,8 +13,9 @@ master = Tk()
 def callback():
     q = bool(re.get())
     s = bool(re2.get())
+    z = bool(re3.get())
     # TODO : use listcreation methods to sanitize the inputs before being placed into a new array
-    InfoArray = [e.get(),g.get(),m.get(),h.get(),r.get(),q,s]
+    InfoArray = [e.get(),g.get(),h.get(),r.get(),q,s,m.get(),z]
     WriteArrayToText(InfoArray)
 
 e = Entry(master)
@@ -43,6 +44,8 @@ l = Checkbutton(master, text="Litter", variable=re)
 l.pack()
 c = Checkbutton(master, text="Chute", variable=re2)
 c.pack()
+cc = Checkbutton(master, text="Broken", variable=re3)
+cc.pack()
 b = Button(master, text="Submit", command=callback)
 b.pack()
 mainloop()

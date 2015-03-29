@@ -15,7 +15,7 @@ def callback():
     s = bool(re2.get())
     z = bool(re3.get())
     # TODO : use listcreation methods to sanitize the inputs before being placed into a new array
-    InfoArray = [e.get(),g.get(),h.get(),r.get(),q,s,m.get(),z]
+    InfoArray = [e.get(),g.get(),int(h.get()),int(r.get()),q,s,m.get(),z]
     WriteArrayToText(InfoArray)
 
 e = Entry(master)

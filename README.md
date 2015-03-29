@@ -5,7 +5,7 @@ If you want to use this, don't. The earliest it'll be complete and usable by som
 
 ## How To Use
 
-###### Input 
+##### Input 
 
 Our analyzation program can accept any text file in the format below, so you can easily create your own tool. It does have a bit of leniency in the sense that it if you were to pass [2] as a number in a string, it would turn it into a integer. It doesn't have any exception catching, so it'll just crash if you pass it a really weird input.
 ```
@@ -23,7 +23,7 @@ To create an array on windows, run input_gui.py. It writes to the same directory
 
 To configure your analyzation settings, open up config.py and mess around with those. Everything is commeneted so you should be able to understand what's happening.
 
-######  Output
+#####  Output
 
 Before you can get started, you have to go into scan.py and change os.chdir() to where you have the text files stored.
 

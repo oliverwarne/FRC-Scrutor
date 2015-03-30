@@ -1,0 +1,10 @@
+['5431', 'Titan Robotics', 6, 0, False, True, '30', False]
+### Format your file in this way
+# Array[0] = TeamNum (in a string)
+# Array[1] = TeamName (again, in a string
+# Array[2] = The stack height of totes that they can reliably stack
+# Array[3] = The height of totes on which they can reliably place a bin
+# Array[4] = If they use litter in any way
+# Array[5] = If they use the chute
+# Array[6] = Match number (in a string)
+# Array[7] = If the robot broke during this match

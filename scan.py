@@ -23,12 +23,13 @@ for file in glob.glob("*.txt"):
             finalarray.append(splitname)
             finalarray = ' '.join(finalarray)
             finalpercentage.write(finalarray + "\n")
+            f.close
+
     else:
         print "This array has already been inserted"
-
 scanned.close
-f.close
 finalpercentage.close
+
 
         
 

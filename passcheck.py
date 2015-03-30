@@ -1,4 +1,5 @@
 import config
+from ast import literal_eval
 
 ######
 #Most of the functions return a bool value. 
@@ -13,6 +14,7 @@ import config
 ### SCOUTED TEAM CHECKING STUFF BEGIN ###
 
 def CheckTotesMin(TotesStacked):
+    TotesStacked = int(TotesStacked)
     if config.MinTotes <= TotesStacked:
         return True
     elif config.MinTotes > TotesStacked:
@@ -21,6 +23,7 @@ def CheckTotesMin(TotesStacked):
         return True
    
 def CheckBinsMin(BinOnTotesStacked):
+    BinOnTotesStacked = int(BinOnTotesStacked)
     if config.MinBins <= BinOnTotesStacked:
         return True
     elif config.MinBins > BinOnTotesStacked:
@@ -29,15 +32,19 @@ def CheckBinsMin(BinOnTotesStacked):
         return True
         
 def CheckLitter(LitterPlaced):
+    if not isinstance(LitterPlaced,bool):
+        LitterPlaced = literal_eval(LitterPlaced)
     if LitterPlaced:
         return True
-    else:
+    elif LitterPlaced == False:
         return False
         
 def CheckChute(ChuteUsed):
+    if not isinstance(ChuteUsed,bool):
+        ChuteUsed = literal_eval(ChuteUsed)
     if ChuteUsed:
         return True
-    else:
+    elif ChuteUsed == False:
         return False
         
 def CheckRankedHigherABS(RankedHigher):

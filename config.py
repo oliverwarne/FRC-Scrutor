@@ -6,15 +6,15 @@
 
 ### Scoring stuff
 # How valuable something is to us
-TotesValue = 3
-BinValue = 3
+TotesValue = 1
+BinValue = 1
 LitterValue = 1
-ChuteValue = 1
+ChuteValue = 1gi
 
 ### Absolute Needs
 # Things that we absoluetly need. If they don't have it, percentage will be 0.
-ABSTotesPass = True
-ABSBinPass = True
+ABSTotesPass = False
+ABSBinPass = False
 ABSLitterPass = False
 ABSChutePass = False
 

@@ -1,6 +1,7 @@
 import listcreate
 import listinterp
 import analyzation
+import passcheck
 import config
 
 def Create0InitalizedArray():
@@ -37,6 +38,4 @@ print "ANALYZATION"
 print analyzation.PercentageCheckAbsolute(EmptyArray)
 
 print analyzation.PercentageCheckAbsolute(Test_Array)
-
-
 # TODO : Figure out how to write a test for this

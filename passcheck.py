@@ -50,7 +50,7 @@ def CheckChute(ChuteUsed):
 def CheckRankedHigherABS(RankedHigher):
     if config.RankedHigherBool == RankedHigher:
         return True
-    if RankedHigher == True and config.RankedHigherBool == False:
+    if RankedHigher and config.RankedHigherBool:
         return True
     else:
         return False

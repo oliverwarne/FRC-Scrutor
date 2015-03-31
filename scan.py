@@ -8,6 +8,9 @@ import string
 os.chdir("davids-thing/TestTexts/")
 
 def CreateArray(line):
+    # this function creates an array that has team num,name, and percentage score. 
+    # can't really be used outside of this specific usage case (inside the for loop
+    # below)
     finalarray = []
     lineperc = analyzation.PercentageCheckAbsolute(line)
     finalarray.append(str(lineperc))

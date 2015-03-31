@@ -17,19 +17,19 @@ def CreateArray(line):
     finalarray = ' '.join(finalarray)
     return finalarray
 
-while True:
-    for file in glob.glob("*.txt"):
-        scanned = open("scanned.cfg","a+")
-        finalpercentage = open("percentage.file","a+")
+while True: 
+    for file in glob.glob("*.txt"): #glob.glob scans a directory and i use it to return all the file names
+        scanned = open("scanned.cfg","a+") # this file is written to when it has checked 
+        finalpercentage = open("percentage.file","a+") # this file it to be written to with the final percentage
         with open(file,"r") as f:
             for line in f:
-                line = ast.literal_eval(line)
+                line = ast.literal_eval(line) #hackity hack hack hack. at least it's more secure that eval()
                 if f.name in scanned.read():
                     print "This has already been analyzed!"
                 else:
                     scanned.write(f.name + "\n")
                     finalpercentage.write(CreateArray(line) + "\n")
-    time.sleep(2)
+    time.sleep(20)
 
 
 scanned.close

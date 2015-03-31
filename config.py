@@ -9,7 +9,7 @@
 TotesValue = 1
 BinValue = 1
 LitterValue = 1
-ChuteValue = 1gi
+ChuteValue = 1
 
 ### Absolute Needs
 # Things that we absoluetly need. If they don't have it, percentage will be 0.

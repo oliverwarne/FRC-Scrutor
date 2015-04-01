@@ -1,3 +1,5 @@
+import config
+from os import chdir
 from listcreate import InputListIntoScoutedArray
 from filecreate import GetNameAndTeamNum
 from filecreate import WriteArrayToText
@@ -9,6 +11,7 @@ from Tkinter import Tk
 from Tkinter import Entry
 from Tkinter import END
 master = Tk()
+chdir(config.dirScouted)
 
 def callback():
     q = bool(re.get())

@@ -2,6 +2,10 @@
 ### CUSTOMIZATION BEGIN ###
 ###########################
 
+### CUSTOMIZATION FOR SCAN.py BEGIN ###
+dirScouted = "davids-thing/TestTexts/"
+### CUSTOMIZATION FOR SCAN.py END ###
+
 ### CUSTOMIZATION FOR ANALYZATION.py BEGIN ###
 
 ### Scoring stuff

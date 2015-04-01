@@ -4,7 +4,7 @@ def GetNameAndTeamNum(Scouted_Array): #returns the filename for scan.py
 
 def WriteArrayToText(Scouted_Array): # a kind of broken function that can't be used anywhere except
                                      # for our very specific usage case inside scan.py
-    filename = GetNameAndTeamNum(Scouted_Array)
-    f = open(filename,'w')
+    f = open(GetNameAndTeamNum(Scouted_Array),'w')
     f.write(str(Scouted_Array))
+    f.close
 ### FILE LOADING STUFF END ###

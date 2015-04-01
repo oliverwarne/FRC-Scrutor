@@ -5,7 +5,7 @@
 ### CUSTOMIZATION FOR ANALYZATION.py BEGIN ###
 
 ### Scoring stuff
-# How valuable something is to us
+# How valuable something is to us (should be float)
 TotesValue = 1
 BinValue = 1
 LitterValue = 1

@@ -47,24 +47,24 @@ def CheckChute(ChuteUsed):
     elif ChuteUsed == False:
         return False
         
-def CheckRankedHigherABS(RankedHigher):
-    if config.RankedHigherBool == RankedHigher:
-        return True
-    if RankedHigher and config.RankedHigherBool:
-        return True
-    else:
-        return False
+#def CheckRankedHigherABS(RankedHigher):
+#    if config.RankedHigherBool == RankedHigher:
+#        return True
+#    if RankedHigher and config.RankedHigherBool:
+#        return True
+#    else:
+#       return False
 
-def CheckRankedHigherData(OurRank,ScoutedRank):
-    if config.RankedHigherBool:
-        if OurRank < ScoutedRank:
-            return True
-        elif OurRank > ScoutedRank:
-            return False
-        else:
-            raise NameError("!")
-    else: 
-        return True
+#def CheckRankedHigherData(OurRank,ScoutedRank):
+#    if config.RankedHigherBool:
+#        if OurRank < ScoutedRank:
+#            return True
+#        elif OurRank > ScoutedRank:
+#            return False
+#        else:
+#           raise NameError("!")
+#    else: 
+#        return True
         
 def CheckMinScore(MinScore,ScoutedScore):
     if config.MinScore:

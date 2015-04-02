@@ -46,7 +46,18 @@ def CheckChute(ChuteUsed):
         return True
     elif ChuteUsed == False:
         return False
-        
+
+def CheckMinScore(MinScore,ScoutedScore):
+    if config.MinScore:
+        if MinScore > ScoutedScore:
+            return False
+        elif MinScore <= ScoutedScore:
+            True
+    else:
+         return True
+
+###This is stuff that we are not currently using, but might use in the future###
+
 #def CheckRankedHigherABS(RankedHigher):
 #    if config.RankedHigherBool == RankedHigher:
 #        return True
@@ -66,15 +77,6 @@ def CheckChute(ChuteUsed):
 #    else: 
 #        return True
         
-def CheckMinScore(MinScore,ScoutedScore):
-    if config.MinScore:
-        if MinScore > ScoutedScore:
-            return False
-        elif MinScore <= ScoutedScore:
-            True
-    else:
-         return True
-
 ### SCOUTED TEAM CHECKING STUFF END ###
 
 

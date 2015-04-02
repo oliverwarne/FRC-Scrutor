@@ -11,13 +11,17 @@ def CreateArray(line):
     # this function creates an array that has team num,name, and percentage score. 
     # can't really be used outside of this specific usage case (inside the for loop
     # below)
-    finalarray = []
-    lineperc = PercentageCheckAbsolute(line)
-    finalarray.append(str(lineperc))
+    lineperc = PercentageCheckAbsolute(line) #calculates percentage for specific file
+    
+    
     splitname = f.name.split("-")
-    splitname = splitname[0] + " " + splitname[1]
+    splitname = splitname[0] + " " + splitname[1] #gets team name + num
+    
+    finalarray = []
+    finalarray.append(str(lineperc))
     finalarray.append(splitname)
-    finalarray = ' '.join(finalarray)
+    finalarray = ' '.join(finalarray) # puts everything together to be written
+    
     return finalarray
 
 while True: 
@@ -32,7 +36,7 @@ while True:
                 else:
                     scanned.write(f.name + "\n")
                     finalpercentage.write(CreateArray(line) + "\n")
-    sleep(20)
+    sleep(3)
 
 
 scanned.close

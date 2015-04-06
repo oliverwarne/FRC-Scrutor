@@ -1,5 +1,6 @@
 import passcheck
 import config
+from glob import glob
 
 # General overview. This module should accept a filled array, then fill another 
 # array (of the 5 things it checks for), with True/False based on if it passes
@@ -25,6 +26,9 @@ def ReturnTeamScorePercentage(teamScore):
     percentage = teamScore / maximumScore * 100
     return percentage
 
+
+
+
 def PercentageCheckAbsolute(FilledArray):
     BoolArray = CreateBoolArray(FilledArray)
     TeamScore = BoolArrayIntoTeamScore(BoolArray)
@@ -32,26 +36,26 @@ def PercentageCheckAbsolute(FilledArray):
     # index on the array is true. If it is, then it calculates the team score. If it
     # is false, then it sets percentage at 0.
     # If none of the "must haves" are true, then it setss p
-    if config.ABSTotesPass:
+    if config.ShouldCheckTotes:
         if BoolArray[0]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if config.ABSBinPass and Percentage != 0:
+    if config.ShouldCheckBin and Percentage != 0:
         if BoolArray[1]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if config.ABSLitterPass and Percentage != 0:
+    if config.ShouldCheckLitter and Percentage != 0:
         if BoolArray[2]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if config.ABSChutePass and Percentage != 0:
+    if config.ShouldCheckChute and Percentage != 0:
         if BoolArray[3]:
             Percentage = ReturnTeamScorePercentage(TeamScore)
         else:
             Percentage = 0
-    if not config.ABSTotesPass and not config.ABSBinPass and not config.ABSLitterPass and not config.ABSChutePass:
+    if not config.ShouldCheckTotes and not config.ShouldCheckBin and not config.ShouldCheckLitter and not config.ShouldCheckChute:
         Percentage = ReturnTeamScorePercentage(TeamScore)
     return Percentage

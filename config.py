@@ -16,11 +16,11 @@ LitterValue = 1
 ChuteValue = 1
 
 ### Absolute Needs
-# Things that we absoluetly need. If they don't have it, percentage will be 0.
-ABSTotesPass = False
-ABSBinPass = False
-ABSLitterPass = False
-ABSChutePass = False
+# Things that we are checking for.
+ShouldCheckTotes = False
+ShouldCheckBin = False
+ShouldCheckLitter = False
+ShouldCheckChute = False
 
 ### CUSTOMIZATION FOR ANALYZATION.py END ###
 

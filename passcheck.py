@@ -32,15 +32,18 @@ def CheckBinsMin(BinOnTotesStacked):
         return True
         
 def CheckLitter(LitterPlaced):
+    # Yes, I know that I should be using the "pythonic" way, but I am not sure
+    # how to use try/except when there is no user input to ask for the user
+    # to fix it.
     if not isinstance(LitterPlaced,bool):
-        LitterPlaced = literal_eval(LitterPlaced)
+        LitterPlaced = literal_eval(LitterPlaced) # oops. hackiness to max
     if LitterPlaced:
         return True
     elif LitterPlaced == False:
         return False
         
 def CheckChute(ChuteUsed):
-    if not isinstance(ChuteUsed,bool):
+    if not isinstance(ChuteUsed,bool): 
         ChuteUsed = literal_eval(ChuteUsed)
     if ChuteUsed:
         return True
@@ -48,13 +51,14 @@ def CheckChute(ChuteUsed):
         return False
 
 def CheckMinScore(MinScore,ScoutedScore):
-    if config.MinScore:
-        if MinScore > ScoutedScore:
-            return False
-        elif MinScore <= ScoutedScore:
-            True
+    if MinScore > ScoutedScore:
+        return False
+    elif MinScore <= ScoutedScore:
+        True
     else:
-         return True
+        return True
+
+
 
 ###This is stuff that we are not currently using, but might use in the future###
 

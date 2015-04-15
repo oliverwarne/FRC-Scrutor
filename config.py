@@ -1,11 +1,15 @@
-textDir = "TestFolder/"
+textDir = "TestTexts/"
 
-heightMin = 3
-binMin = 4
-stacksMin = 1
-litterCheck = True
-alternateCheck = True
-bankrobCheck = True
+# Mess with this stuff #####
+heightMin = 0              #
+binMin = 6                 #
+stacksMin = 3              #
+litterCheck = False        #
+alternateCheck = True      #
+bankrobCheck = False       #
+############################
+
+### DONT MESS WITH ANYTHING ELSE ###
 
 absHeight = True
 absBin = True
@@ -17,3 +21,6 @@ binValue = 1
 stacksValue = 1
 litterValue = 1
 bankrobValue = 1
+
+absoluteMinimumBin = 0 # DO NOT CHANGE THIS TO ANYTHING ABOVE 0.
+# If the robot cannot move bins above this limit, they WILL fail

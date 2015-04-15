@@ -3,7 +3,7 @@ from glob import glob
 from os import chdir
 from time import sleep
 
-import IO_stuff
+import IO
 import config
 
 chdir(config.textDir)
@@ -18,7 +18,7 @@ while True:
                 line = literal_eval(line) #hackity hack hack hack. at least it's more secure than eval
                 if f.name not in scanned.read():
                     scanned.write(f.name + "\n")
-                    finalpercentage.write(str(IO_stuff.teamPercentage(line)) + " " + str(line[0]) + "-" + str(line[1]) + "\n")
+                    finalpercentage.write(str(IO.teamPercentage(line)) + " " + str(line[0]) + "-" + str(line[1]) + "\n")
                 else:
                     print "This has already been analyzed!"
         scanned.close

@@ -8,6 +8,7 @@ If you want to use this, don't. The earliest it'll be complete and usable by som
 ##### Input 
 
 Our analyzation program can accept any text file in the format below, so you can easily create your own tool. It does have a bit of leniency in the sense that it if you were to pass [2] as a number in a string, it would turn it into a integer. It doesn't have any exception catching, so it'll just crash if you pass it a really weird input.
+
 ```
 Array[0] = TeamNum (string)
 Array[1] = TeamName (string)
@@ -15,11 +16,13 @@ Array[2] = The stack height of totes that they can reliably stack (int)
 Array[3] = The height of totes on which they can reliably place a bin (int)
 Array[4] = If they use litter in any way (bool)
 Array[5] = If they use the chute (bool)
-Array[6] = Match number (string
+Array[6] = Match number (string)
 Array[7] = If the robot broke during this match (bool)
+Array[8] = If the robot can ONLY use an alternate scoring platform (bool) 
+Array[9] = If the robot can steal bins from the landfill (bool)
+Array[10] = Other notes regarding how the robot functions (string)
 ```
-
-To create an array on windows, run input_gui.py. It writes to the same directory that the input_gui.py is.
+There is no built in gui for making them.
 
 To configure your analyzation settings, open up config.py and mess around with those. Everything is commeneted so you should be able to understand what's happening.
 

@@ -1,41 +1,26 @@
-###########################
-### CUSTOMIZATION BEGIN ###
-###########################
+textDir = "TestTexts/"
 
-### CUSTOMIZATION FOR SCAN.py BEGIN ###
-dirScouted = "davids-thing/TestTexts/"
-### CUSTOMIZATION FOR SCAN.py END ###
+# Mess with this stuff #####
+heightMin = 0              #
+binMin = 6                 #
+stacksMin = 3              #
+litterCheck = False        #
+alternateCheck = True      #
+bankrobCheck = False       #
+############################
 
-### CUSTOMIZATION FOR ANALYZATION.py BEGIN ###
+### DONT MESS WITH ANYTHING ELSE ###
 
-### Scoring stuff
-# How valuable something is to us (should be float)
-TotesValue = 1
-BinValue = 1
-LitterValue = 1
-ChuteValue = 1
+absHeight = True
+absBin = True
+absStacks = True
+absLitter = True
 
-### Absolute Needs
-# Things that we are checking for.
-ShouldCheckTotes = False
-ShouldCheckBin = False
-ShouldCheckLitter = False
-ShouldCheckChute = False
+heightValue = 1
+binValue = 1
+stacksValue = 1
+litterValue = 1
+bankrobValue = 1
 
-### CUSTOMIZATION FOR ANALYZATION.py END ###
-
-### CUSTOMIZATION FOR PASSCHECK.py BEGIN ###
-
-### Minimum of stuff
-# Minimum of how many totes can be in a stack
-MinTotes = 5
-# Minimum of on how many totes they can place a bin
-MinBins = 3
-# Minimum score
-MinScore = 0 
-
-### CUSTOMIZATION FOR PASSCHECK.py END ###
-
-#########################
-### CUSTOMIZATION END ###
-#########################
+absoluteMinimumBin = 0 # DO NOT CHANGE THIS TO ANYTHING ABOVE 0.
+# If the robot cannot move bins above this limit, they WILL fail

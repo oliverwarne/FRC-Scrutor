@@ -8,6 +8,9 @@ litterCheck = False        #
 alternateCheck = True      #
 bankrobCheck = False       #
 toteSetCheck = True        #
+throwNoodleCheck = True    #
+noodleInBinCheck = True    #
+coopertitionCheck = True   #
 ############################
 
 ### DONT MESS WITH ANYTHING ELSE ###

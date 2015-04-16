@@ -7,6 +7,7 @@ stacksMin = 3              #
 litterCheck = False        #
 alternateCheck = True      #
 bankrobCheck = False       #
+toteSetCheck = True        #
 ############################
 
 ### DONT MESS WITH ANYTHING ELSE ###
@@ -21,6 +22,7 @@ binValue = 1
 stacksValue = 1
 litterValue = 1
 bankrobValue = 1
+toteSetValue = 1
 
 absoluteMinimumBin = 0 # DO NOT CHANGE THIS TO ANYTHING ABOVE 0.
 # If the robot cannot move bins above this limit, they WILL fail

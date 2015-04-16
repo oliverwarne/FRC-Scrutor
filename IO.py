@@ -23,9 +23,9 @@ def teamPercentage(team):
         percentageArray[4] = analyze.boolPassFail(config.bankrobCheck,literal_eval(team[10])) * config.bankrobValue
         
         #SECTION BELOW WAS DONE AS FAVOR BY USAID
-        percentageArray[5] = analyze.boolPassFail(config.throwNoodleCheck, literal_eval(team[11])) * config.throwNoodleCheck
-        percentageArray[6] = analyze.boolPassFail(config.noodleInBinCheck, literal_eval(team[12])) * config.noodleInBinCheck
-        percentageArray[7] = analyze.boolPassFail(config.coopertitionCheck, literal_eval(team[13])) * config.coopertitionCheck
+        percentageArray[5] = analyze.boolPassFail(config.throwNoodleCheck, literal_eval(team[11])) * config.throwNoodleValue
+        percentageArray[6] = analyze.boolPassFail(config.noodleInBinCheck, literal_eval(team[12])) * config.noodleInBinValue
+        percentageArray[7] = analyze.boolPassFail(config.coopertitionCheck, literal_eval(team[13])) * config.coopertitionValue
         #SECTION ABOVE WAS DONE AS FAVOR BY USAID
         
         

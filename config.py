@@ -27,6 +27,9 @@ stacksValue = 1
 litterValue = 1
 bankrobValue = 1
 toteSetValue = 1
+throwNoodleValue = 1
+noodleInBinValue = 1
+coopertitionCheck = 1
 
 absoluteMinimumBin = 0 # DO NOT CHANGE THIS TO ANYTHING ABOVE 0.
 # If the robot cannot move bins above this limit, they WILL fail

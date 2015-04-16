@@ -21,6 +21,9 @@ Array[7] = If the robot broke during this match (bool)
 Array[8] = If the robot can ONLY use an alternate scoring platform (bool) 
 Array[9] = If the robot can steal bins from the landfill (bool)
 Array[10] = Other notes regarding how the robot functions (string)
+Array[11] = If they throw noodles
+Array[12] = If they put a noodle in a recycling container
+Array[13] = If they did coopertition
 ```
 There is no built in gui for making them.
 

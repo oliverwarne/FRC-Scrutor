@@ -2,12 +2,13 @@ from ast import literal_eval
 from glob import glob
 from os import chdir
 from time import sleep
+import sqlite3
 
 import IO
 import config
 
 chdir(config.textDir)
-
+conn = sqlite3.connect("TEAMS.db")
 
 while True: 
     for file in glob("*.txt"): #glob scans a directory and i use it to return all the file names

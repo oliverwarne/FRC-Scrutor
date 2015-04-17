@@ -24,6 +24,9 @@ Array[10] = Other notes regarding how the robot functions (string)
 Array[11] = If they throw noodles
 Array[12] = If they put a noodle in a recycling container
 Array[13] = If they did coopertition
+Array[14] = On how many OTHER TEAMS totes can they place a bin? 0 being they can't (int)
+Array[15] = Do they do autonomous? (bool) 
+Array[16] = Do they do autonomous tote set? (bool)
 ```
 There is no built in gui for making them.
 

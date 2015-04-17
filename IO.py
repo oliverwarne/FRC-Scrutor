@@ -12,7 +12,7 @@ def teamIdentity(file):
 def teamPercentage(team):
     # Array Creation
     percentageArray = [0,0,0,0,0]
-    if literal_eval(team[9]) or (literal_eval(team[4]) < config.absoluteMinimumBin):
+    if literal_eval(team[9]) or (literal_eval(team[4]) < config.absoluteMinimumBin) or literal_eval(team[14]) or (literal_eval(team[15]) == 0):
         percentage = 0
     else:
         percentageArray[0] = (literal_eval(team[3]) >= config.heightMin) * config.heightValue  #Height TODO: GET ACTUAL INDEX POSITIONS
@@ -29,3 +29,8 @@ def teamPercentage(team):
     
     # Percentage Creation
     return percentage
+    
+def getGroup(team):
+    # todo: do this
+    print 'ay this dont work'
+    

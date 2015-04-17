@@ -14,19 +14,18 @@ Array[0] = TeamNum (string)
 Array[1] = TeamName (string)
 Array[2] = The stack height of totes that they can reliably stack (int)
 Array[3] = The height of totes on which they can reliably place a bin (int)
-Array[4] = If they use litter in any way (bool)
-Array[5] = If they use the chute (bool)
-Array[6] = Match number (string)
-Array[7] = If the robot broke during this match (bool)
-Array[8] = If the robot can ONLY use an alternate scoring platform (bool) 
-Array[9] = If the robot can steal bins from the landfill (bool)
-Array[10] = Other notes regarding how the robot functions (string)
-Array[11] = If they throw noodles
-Array[12] = If they put a noodle in a recycling container
-Array[13] = If they did coopertition
-Array[14] = On how many OTHER TEAMS totes can they place a bin? 0 being they can't (int)
-Array[15] = Do they do autonomous? (bool) 
-Array[16] = Do they do autonomous tote set? (bool)
+Array[4] = If they use the chute (bool)
+Array[5] = Match number (string)
+Array[6] = If the robot broke during this match (bool)
+Array[7] = If the robot can ONLY use an alternate scoring platform (bool) 
+Array[8] = If the robot can steal bins from the landfill (bool)
+Array[9] = Other notes regarding how the robot functions (string)
+Array[10] = If they throw noodles
+Array[11] = If they put a noodle in a recycling container
+Array[12] = If they did coopertition
+Array[13] = On how many OTHER TEAMS totes can they place a bin? 0 being they can't (int)
+Array[14] = Do they do autonomous? (bool) 
+Array[15] = Do they do autonomous tote set? (bool)
 ```
 There is no built in gui for making them.
 

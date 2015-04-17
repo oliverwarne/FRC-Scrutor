@@ -11,6 +11,7 @@ def teamIdentity(file):
 
 def teamPercentage(team):
     # Array Creation
+
     percentageArray = [0,0,0,0,0]
     if literal_eval(team[9]) or (literal_eval(team[4]) < config.absoluteMinimumBin) or literal_eval(team[14]) or (literal_eval(team[15]) == 0):
         percentage = 0
@@ -21,6 +22,12 @@ def teamPercentage(team):
         percentageArray[2] = (literal_eval(team[5]) >= config.stacksMin) * config.stacksValue
         percentageArray[3] = analyze.boolPassFail(config.litterCheck,literal_eval(team[6])) * config.litterValue
         percentageArray[4] = analyze.boolPassFail(config.bankrobCheck,literal_eval(team[10])) * config.bankrobValue
+        #SECTION BELOW WAS DONE AS FAVOR BY USAID
+        percentageArray[5] = analyze.boolPassFail(config.throwNoodleCheck, literal_eval(team[11])) * config.throwNoodleValue
+        percentageArray[6] = analyze.boolPassFail(config.noodleInBinCheck, literal_eval(team[12])) * config.noodleInBinValue
+        percentageArray[7] = analyze.boolPassFail(config.coopertitionCheck, literal_eval(team[13])) * config.coopertitionValue
+        #SECTION ABOVE WAS DONE AS FAVOR BY USAID
+
         #TODO: Description of autonomus program
         
         teamScore = sum(percentageArray)
@@ -33,4 +40,3 @@ def teamPercentage(team):
 def getGroup(team):
     # todo: do this
     print 'ay this dont work'
-    

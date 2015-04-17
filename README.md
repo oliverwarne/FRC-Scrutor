@@ -29,13 +29,13 @@ Array[15] = Do they do autonomous tote set? (bool)
 ```
 There is no built in gui for making them.
 
-To configure your analyzation settings, open up config.py and mess around with those. Everything is commeneted so you should be able to understand what's happening.
+To configure your analyzation settings, open up config.py and mess around with those.
 
 #####  Output
 
-Before you can get started, you have to go into scan.py and change os.chdir() to where you have the text files stored.
+Before you can get started, you have to go into config.py and point os.chdir() to where you have the text files stored.
 
-To actually begin the analyzation, just run scan.py. It will spit out the score, teamname, and teamnum into percentage.file in a loop, so you can leave it running and have the directory filled by another program.
+To actually begin the analyzation, just run scan.py. It will spit out a percentage of how well the team matches up, and teams number, and the teams name into a csv file.
 
 
 

@@ -12,25 +12,31 @@ def teamIdentity(file):
 def teamPercentage(team):
     # Array Creation
 
-    percentageArray = [0,0,0,0,0]
-    if literal_eval(team[9]) or (literal_eval(team[4]) < config.absoluteMinimumBin) or literal_eval(team[14]) or (literal_eval(team[15]) == 0):
+    percentageArray = [0, 0, 0, 0, 0]
+    if literal_eval(team[6]) or (literal_eval(team[3]) < config.absoluteMinimumBin) or literal_eval(team[7]):
         percentage = 0
     else:
-        percentageArray[0] = (literal_eval(team[3]) >= config.heightMin) * config.heightValue  #Height TODO: GET ACTUAL INDEX POSITIONS
-        percentageArray[1] = (literal_eval(team[4]) >= config.binMin) * config.binValue
-        # TODO : GET ON DAVIDS ASS TO DO THIS 
-        percentageArray[2] = (literal_eval(team[5]) >= config.stacksMin) * config.stacksValue
-        percentageArray[3] = analyze.boolPassFail(config.litterCheck,literal_eval(team[6])) * config.litterValue
-        percentageArray[4] = analyze.boolPassFail(config.bankrobCheck,literal_eval(team[10])) * config.bankrobValue
+        percentageArray[0] = ((literal_eval(team[2])) >= (config.heightMin)) * (config.heightValue)  #Height TODO: GET ACTUAL INDEX POSITIONS
+        percentageArray[1] = ((literal_eval(team[3])) >= (config.binMin)) * (config.binValue)
+        # TODO : GET ON DAVIDS ASS TO DO THIS
+        # TODO : TELL OLIVER I ALREADY FINISHED!!!!
+        # percentageArray[2] = (literal_eval(team[5]) >= config.stacksMin) * config.stacksValue
+        percentageArray[2] = (literal_eval(team[12])) * config.autonValue
+        percentageArray[3] = (literal_eval(team[13])) * config.toteAutonValue
+        #TODO : GET APP TO WORK AND ADD HOW MANY STACKS THEY DID!!!!
+        percentageArray[4] = analyze.boolPassFail(config.bankrobCheck, literal_eval(team[8])) * config.bankrobValue
         #SECTION BELOW WAS DONE AS FAVOR BY USAID
-        percentageArray[5] = analyze.boolPassFail(config.throwNoodleCheck, literal_eval(team[11])) * config.throwNoodleValue
-        percentageArray[6] = analyze.boolPassFail(config.noodleInBinCheck, literal_eval(team[12])) * config.noodleInBinValue
-        percentageArray[7] = analyze.boolPassFail(config.coopertitionCheck, literal_eval(team[13])) * config.coopertitionValue
+        percentageArray[5] = analyze.boolPassFail(config.throwNoodleCheck, literal_eval(team[10])) * config.throwNoodleValue
+        percentageArray[6] = analyze.boolPassFail(config.noodleInBinCheck, literal_eval(team[11])) * config.noodleInBinValue
+        percentageArray[7] = (literal_eval(team[6])) * config.chuteValue
         #SECTION ABOVE WAS DONE AS FAVOR BY USAID
-
+        #SECTION ABOVE WAS BROKEN AND DAVID FIXED IT MOSTLY
         #TODO: Description of autonomus program
         
         teamScore = sum(percentageArray)
+        if isint(literal_eval(team[9])):
+            if literal_eval(team[9]) <= 6:
+                teamScore = teamScore+(literal_eval(team[9]) *config.stacksValue)
         maxScore = config.heightValue + config.binValue + config.stacksValue + config.litterValue + config.bankrobValue
         percentage = float(teamScore) / float(maxScore) * 100
     
@@ -40,3 +46,11 @@ def teamPercentage(team):
 def getGroup(team):
     # todo: do this
     print 'ay this dont work'
+
+
+def isint(value):
+    try:
+        int(value)
+        return True
+    except ValueError:
+        return False

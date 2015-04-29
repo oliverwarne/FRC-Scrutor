@@ -1,4 +1,4 @@
-textDir = ""
+textDir = 'TestTexts/'
 
 # Mess with this stuff #####
 heightMin = 0              #

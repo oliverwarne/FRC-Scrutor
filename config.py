@@ -1,4 +1,4 @@
-textDir = 'TestTexts/'
+textDir = 'D:\Python\ScrutorCLASSES\exampleThings'
 
 # Mess with this stuff #####
 heightMin = 0              #
@@ -29,10 +29,9 @@ bankrobValue = 1
 toteSetValue = 1
 throwNoodleValue = 1
 noodleInBinValue = 1
-coopertitionCheck = 1
 autonValue = 1
 toteAutonValue = 1
 chuteValue = 1
 
-absoluteMinimumBin = 0 # DO NOT CHANGE THIS TO ANYTHING ABOVE 0.
+MinimumBinHeight = 0 # DO NOT CHANGE THIS TO ANYTHING ABOVE 0.
 # If the robot cannot move bins above this limit, they WILL fail

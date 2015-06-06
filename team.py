@@ -29,16 +29,6 @@ class Team():
         TeamIdentity = self.TeamName + " " + self.TeamNum #gets team name + num
         return TeamIdentity
 
-    def boolPassFail(self, shouldCheck, checkBool):
-        if shouldCheck and checkBool:
-            return True
-        elif not shouldCheck and checkBool:
-            return True
-        elif shouldCheck == checkBool:
-            return True
-        else:
-            return False
-
     def MatchPercentage(self):
         PercentageArray = [0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -48,9 +38,9 @@ class Team():
             PercentageArray[0] = self.StackedHeight >= config.heightMin * config.heightValue
             PercentageArray[1] = self.BinStackedHeight >= config.binMin * config.binValue
             PercentageArray[2] = self.Autonomous * config.autonValue
-            PercentageArray[4] = Team.boolPassFail(self, config.bankrobCheck, self.StealBins) * config.bankrobValue
-            PercentageArray[5] = Team.boolPassFail(self, config.throwNoodleCheck, self.ThrowNoodles) * config.throwNoodleValue
-            PercentageArray[6] = Team.boolPassFail(self, config.noodleInBinCheck, self.FillBin) * config.noodleInBinValue
+            PercentageArray[4] = config.bankrobCheck * self.StealBins * config.bankrobValue
+            PercentageArray[5] = config.throwNoodleCheck * self.ThrowNoodles * config.throwNoodleValue
+            PercentageArray[6] = config.noodleInBinCheck * self.FillBin * config.noodleInBinValue
             PercentageArray[7] = self.ChuteUsed * config.chuteValue
 
             teamScore = sum(PercentageArray)

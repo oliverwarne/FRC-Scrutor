@@ -1,6 +1,8 @@
 # FRC-Scrutor
 Titan Robotics (FRC 5431) scouting analyzation tool for Recycling Rush 2015
 
+You should look through the previous commits to see just how terrible a programmer I was. That's also the reason for 200 commits.
+
 ### Usage
 #### Preparing text files
 A list should be written in a text file in this format.

@@ -1,7 +1,7 @@
 # FRC-Scrutor
 Titan Robotics (FRC 5431) scouting analyzation tool for Recycling Rush 2015
 
-You should look through the previous commits to see just how terrible a programmer I was. That's also the reason for 200 commits.
+You should look through the previous commits to see just how terrible a programmer I was. That's also the reason for 200 commits for a tiny program that should've been written in one sitting.
 
 ### Usage
 #### Preparing text files
